@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672975280066,
+  "timestamp": 1672982376230,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -13,11 +13,11 @@
       "urls": [
         "./favicon.ico",
         "./index.html",
-        "./main.9b8015797ad28e15.js",
+        "./main.9e2cd681bc20ff5c.js",
         "./manifest.webmanifest",
-        "./polyfills.e6956341ec8ed1e4.js",
-        "./runtime.cd8e846b33879c57.js",
-        "./styles.3a8e3e05be3b3833.css"
+        "./polyfills.ab19335c10f65d9e.js",
+        "./runtime.286ea004c51aaab1.js",
+        "./styles.c751506d53731059.css"
       ],
       "patterns": []
     },
@@ -29,6 +29,7 @@
         "ignoreVary": true
       },
       "urls": [
+        "./assets/bible/Bible.json",
         "./assets/icons/icon-128x128.png",
         "./assets/icons/icon-144x144.png",
         "./assets/icons/icon-152x152.png",
@@ -43,6 +44,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
+    "./assets/bible/Bible.json": "2efdfc9890c2846eb518c3c5eeb64e1c0277b0fc",
     "./assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "./assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
     "./assets/icons/icon-152x152.png": "7479a9477815dfd9668d60f8b3b2fba709b91310",
@@ -52,12 +54,12 @@
     "./assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "./assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "./favicon.ico": "b3d57d821b8da1e4253fb00d552916078e20c263",
-    "./index.html": "d0dfcf9fa0f67e65e75c3033bb0c4c3eeaf4e127",
-    "./main.9b8015797ad28e15.js": "f6f88e9ce56436934458dc924f21c15da89b23b9",
-    "./manifest.webmanifest": "00552f88963a7bd3208af6df030a67ca6852c1c4",
-    "./polyfills.e6956341ec8ed1e4.js": "29f400cdf32391da833f47f03f628a748772630b",
-    "./runtime.cd8e846b33879c57.js": "27c5b67ee6d45e6b60b4b27a0eae3153c0eb5dd8",
-    "./styles.3a8e3e05be3b3833.css": "1e7f9e23ca92e074a87e8e0de5a58d43685a3a00"
+    "./index.html": "eb9081c721f8b57437e92cd7265d43bdb9a6c058",
+    "./main.9e2cd681bc20ff5c.js": "a8167ccf38d33dcfe851e104426647a8569cec53",
+    "./manifest.webmanifest": "f2c2073e7ffb971b1ede9f01d349f3d6c6a436f2",
+    "./polyfills.ab19335c10f65d9e.js": "c66fa34f98a5fbae7a93fb40af373852e018becb",
+    "./runtime.286ea004c51aaab1.js": "56d57963ae81041455434fdf279f6846c784f59a",
+    "./styles.c751506d53731059.css": "176478c5706181b5ae860de34e016e97cc0c39c7"
   },
   "navigationUrls": [
     {

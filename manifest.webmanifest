@@ -2,7 +2,7 @@
   "name": "Easter timer",
   "short_name": "Easter timer",
   "theme_color": "#008000",
-  "background_color": "#000000",
+  "background_color": "#008000",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
