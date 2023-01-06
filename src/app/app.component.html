@@ -1,15 +1,14 @@
-<!-- <app-countdown *ngIf="currentComponent == 1"></app-countdown>
-<app-good-friday *ngIf="currentComponent == 2"></app-good-friday>
-<app-heart-of-the-earth *ngIf="currentComponent == 3"></app-heart-of-the-earth>
-<app-easter-sunday *ngIf="currentComponent == 4"></app-easter-sunday> -->
 <div> 
-    <br>
-    <h1 *ngIf="countdown">EASTER SUNDAY</h1>
-    <h3 *ngIf="countdown">is in</h3>
-    <h1 *ngIf="countdown">{{time.days}} Days</h1>
-    <h2 *ngIf="countdown">{{time.hours}} Hours</h2>
-    <h3 *ngIf="countdown">{{time.minutes}} Minutes</h3>
-    <h4 *ngIf="countdown">and<br>{{time.seconds}} Seconds</h4>
-    <br>
+    <div *ngIf="countdown">
+        <br>
+        <h1>EASTER SUNDAY</h1>
+        <h3>is in</h3>
+        <h1>{{time.days}} Days</h1>
+        <h2>{{time.hours}} Hours</h2>
+        <h3>{{time.minutes}} Minutes</h3>
+        <h4>and</h4>
+        <h4>{{time.seconds}} Seconds</h4>
+        <br>
+    </div>
     <h1>{{pageTitle}}</h1>
 </div>

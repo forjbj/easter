@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class TimeService {
   
   public time: any;
-  public easter = new Date("04/09/2023").getTime();
+  public easter = new Date("04/09/2023").getTime(); //in milliseconds
   public timeDiff: any;
   public days: any;
   public hours: any;
