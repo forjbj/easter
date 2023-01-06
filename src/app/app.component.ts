@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { TimeService } from './time.service';
+import * as bibleJson from '../assets/bible/Bible.json';
 
 @Component({
   selector: 'app-root',
@@ -40,4 +41,7 @@ export class AppComponent {
     }
    }
 
+}
+export function read_file() {
+  return JSON.stringify(bibleJson); // WASM WORKS! don't touch
 }

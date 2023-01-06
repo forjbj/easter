@@ -4,10 +4,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { BibleVerseComponent } from './bible-verse/bible-verse.component';
+import { SafePipe } from './safe.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
+    BibleVerseComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,
