@@ -9,6 +9,8 @@
     // position: sticky;
     // color: black;
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+    // -webkit-text-stroke-width: 1px; //text outline
+    // -webkit-text-stroke-color: black;
     display: grid;
     grid-template-columns: 1fr auto;
     // top: 0;

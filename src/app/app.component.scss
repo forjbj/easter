@@ -3,7 +3,12 @@
     width: 100vw;
     position: fixed; // needed to stop bible verse scrollling
     left: 50%;
-    transform:translateX(-50%)
+    transform:translateX(-50%);
+}
+h1, h2, h3, h4, h5 {
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+    // -webkit-text-stroke-width: 0.1em; //text outline
+    // -webkit-text-stroke-color: black;
 }
 .widget {
     max-width: 20rem;
