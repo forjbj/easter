@@ -1,19 +1,17 @@
 
 //::ng-deep necessary to work with wasm innerHTML
-.page {
-    margin: 2rem auto;
-    max-width: 30rem;
-    max-height: 10rem;
-}
-::ng-deep section {
-    border: solid 1px;
-}
-.sticky {
-    position: -webkit-sticky; /* Safari */
-    position: sticky;
+
+// ::ng-deep section {
+//     border: solid 1px;
+// }
+.bibleHeader {
+    // position: -webkit-sticky; /* Safari */
+    // position: sticky;
+    // color: black;
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     display: grid;
     grid-template-columns: 1fr auto;
-    top: 0;
+    // top: 0;
     align-items:center;
     justify-content:center;
     background-color: #008000;
@@ -25,6 +23,7 @@
 }
 .refresh {
     font-size: 1.3rem;
+    margin-right: 0.3rem;
     text-align: center;
     cursor: pointer;
     transition: font-weight 0.3s linear;
@@ -49,7 +48,10 @@
       -webkit-transform: rotate(360deg);
     }
 }
-
+.bible {
+    max-height: 10rem;
+    overflow-y: scroll;
+}
 //  increase font size for readablility (I'm old)
 ::ng-deep .fontType {
     font-family: Georgia,"Times New Roman", Times, serif;

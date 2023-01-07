@@ -2,16 +2,15 @@
     <div *ngIf="countdown">
         <br>
         <h1>EASTER SUNDAY</h1>
-        <h3>is in</h3>
+        <h3 class="reduceMargin">is in</h3>
         <h1>{{time.days}} Days</h1>
         <h2>{{time.hours}} Hours</h2>
         <h3>{{time.minutes}} Minutes</h3>
-        <h4>and</h4>
+        <h4 class="reduceMargin">and</h4>
         <h4>{{time.seconds}} Seconds</h4>
-        <br>
     </div>
     <h1>{{pageTitle}}</h1>
-
-    <app-bible-verse class="widget"></app-bible-verse>
-
+    <div class="widget">
+        <app-bible-verse></app-bible-verse>
+    </div>
 </div>
