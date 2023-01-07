@@ -25,13 +25,15 @@ export class BibleVerseComponent {
              public meta: Meta,
              public elementRef:ElementRef,) {
 
-  this.load();
+  this.load()
+
   }
 
   load() {
     this.threadWASM();
-    this.bibleInfo(); //wait till threadWASM is finished to run to get book info
-  }
+    setTimeout(() => { //setTimeOut 0.5secs; necessary as bibleInfo not populated on start ??? not sure why; reload produces last book info without this
+      this.bibleInfo()
+    }, 500)  }
 
   threadWASM() {
     if (typeof Worker !== 'undefined') {
@@ -61,7 +63,7 @@ export class BibleVerseComponent {
 
       ver[this.verse -1].scrollIntoView({
                             behavior: 'auto',
-                            block: 'center',
+                            block: 'start',
                             inline: 'center'
                         });
     }
