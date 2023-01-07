@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1672982376230,
+  "timestamp": 1673059072541,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -11,13 +11,14 @@
         "ignoreVary": true
       },
       "urls": [
+        "./73.f41189a9806f5261.js",
         "./favicon.ico",
         "./index.html",
-        "./main.9e2cd681bc20ff5c.js",
+        "./main.bc8e70808f33ad05.js",
         "./manifest.webmanifest",
         "./polyfills.ab19335c10f65d9e.js",
-        "./runtime.286ea004c51aaab1.js",
-        "./styles.c751506d53731059.css"
+        "./runtime.1763586d13b37d08.js",
+        "./styles.86978690f8240385.css"
       ],
       "patterns": []
     },
@@ -44,6 +45,7 @@
   ],
   "dataGroups": [],
   "hashTable": {
+    "./73.f41189a9806f5261.js": "4a1f56cf77b7b369b6085790785f90edd41a93c1",
     "./assets/bible/Bible.json": "2efdfc9890c2846eb518c3c5eeb64e1c0277b0fc",
     "./assets/icons/icon-128x128.png": "dae3b6ed49bdaf4327b92531d4b5b4a5d30c7532",
     "./assets/icons/icon-144x144.png": "b0bd89982e08f9bd2b642928f5391915b74799a7",
@@ -54,12 +56,12 @@
     "./assets/icons/icon-72x72.png": "c457e56089a36952cd67156f9996bc4ce54a5ed9",
     "./assets/icons/icon-96x96.png": "3914125a4b445bf111c5627875fc190f560daa41",
     "./favicon.ico": "b3d57d821b8da1e4253fb00d552916078e20c263",
-    "./index.html": "eb9081c721f8b57437e92cd7265d43bdb9a6c058",
-    "./main.9e2cd681bc20ff5c.js": "a8167ccf38d33dcfe851e104426647a8569cec53",
+    "./index.html": "4c81c2e179432b0b094ccab59c8d15ffbbf4a7f1",
+    "./main.bc8e70808f33ad05.js": "3213e9c2ed7adfa57cdf15303e610eb70c401bed",
     "./manifest.webmanifest": "f2c2073e7ffb971b1ede9f01d349f3d6c6a436f2",
     "./polyfills.ab19335c10f65d9e.js": "c66fa34f98a5fbae7a93fb40af373852e018becb",
-    "./runtime.286ea004c51aaab1.js": "56d57963ae81041455434fdf279f6846c784f59a",
-    "./styles.c751506d53731059.css": "176478c5706181b5ae860de34e016e97cc0c39c7"
+    "./runtime.1763586d13b37d08.js": "cf39624d3eef94a214f3c24979ea845d5a68c81b",
+    "./styles.86978690f8240385.css": "f26aa267140adb7f9daa5b12611449d792c84d03"
   },
   "navigationUrls": [
     {
