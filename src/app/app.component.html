@@ -1,4 +1,4 @@
-<div class="page"> 
+<div [ngClass]="countdown == true ? 'countdownPage' : 'easterPage'"> 
     <div *ngIf="countdown">
         <br>
         <h1>EASTER SUNDAY</h1>

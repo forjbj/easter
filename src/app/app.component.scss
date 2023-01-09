@@ -1,13 +1,22 @@
-.page {
+.countdownPage {
     min-height: 100vh;//min-height necessary for pics - that took hours
     width: 100vw;
     background-image: url("../assets/backgrounds/Easter-CountdownBackground-Portrait.png");
     background-size: cover;
-    // background-repeat: no-repeat;
     background-position: center center;
     @media (min-width: 720px) {
         background-image: url(("../assets/backgrounds/Easter-CountdownBackground-Landscape.png"));
     }
+}
+.easterPage {
+    min-height: 100vh;//min-height necessary for pics - that took hours
+    width: 100vw;
+    background-image: url("../assets/backgrounds/Background Easter.png");
+    background-size: cover;
+    background-position: center center;
+    // @media (min-width: 720px) {
+    //     background-image: url(("../assets/backgrounds/Easter-CountdownBackground-Landscape.png"));
+    // }
 }
 h1, h2, h3, h4, h5 {
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
