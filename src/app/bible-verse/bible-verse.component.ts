@@ -10,7 +10,7 @@ import { Meta, Title } from '@angular/platform-browser';
   styleUrls: ['./bible-verse.component.scss']
 })
 export class BibleVerseComponent {
-  public result?: string;
+  public result?: string = ""; //empty string necessary or 'undefined' shows up briefly on screen
   public chapter?: number;
   public verse?: number;
   public observer?: IntersectionObserver;
@@ -33,7 +33,7 @@ export class BibleVerseComponent {
     this.threadWASM();
     setTimeout(() => { //setTimeOut 0.5secs; necessary as bibleInfo not populated on start ??? not sure why; reload produces last book info without this
       this.bibleInfo()
-    }, 500)  }
+    }, 300)  }
 
   threadWASM() {
     if (typeof Worker !== 'undefined') {

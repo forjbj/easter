@@ -1,7 +1,6 @@
 use wasm_bindgen::prelude::*; //import everything to create library
 
 extern crate serde_json;
-extern crate regex;
 extern crate rand;
 
 use serde_json::Value as jsonValue;

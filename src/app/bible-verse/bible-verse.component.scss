@@ -1,22 +1,14 @@
 
 //::ng-deep necessary to work with wasm innerHTML
 
-// ::ng-deep section {
-//     border: solid 1px;
-// }
 .bibleHeader {
-    // position: -webkit-sticky; /* Safari */
-    // position: sticky;
-    // color: black;
+    border-radius: 0.5rem;
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
-    // -webkit-text-stroke-width: 1px; //text outline
-    // -webkit-text-stroke-color: black;
     display: grid;
     grid-template-columns: 1fr auto;
-    // top: 0;
     align-items:center;
     justify-content:center;
-    background-color: #008000;
+    background-color: rgba($color: #32563b, $alpha: 0.7);
 }
 .title {
     font-variant-caps: small-caps;
@@ -51,7 +43,8 @@
     }
 }
 .bible {
-    max-height: 10rem;
+    margin-top: 0.1rem;
+    height: 10rem;
     overflow-y: scroll;
 }
 //  increase font size for readablility (I'm old)
@@ -117,7 +110,6 @@
 }
 //smaller font for end of book notes
 ::ng-deep .notes {
-    //font-family: Arial, Helvetica, sans-serif;
     font-style: italic;
     font-size: 0.9rem;
     text-align: center;
