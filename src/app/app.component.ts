@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'easter-countdown';
   public now = new Date().getTime();
   public easterSunday = new Date("04/09/2023").getTime(); // dates are in american money mm/dd/yyyy; .getTime() in milliseconds
-  // public easterSunday = new Date("01/06/2023").getTime(); // dates are in american money mm/dd/yyyy; .getTime() in milliseconds
+  // public easterSunday = new Date("01/010/2023").getTime(); // dates are in american money mm/dd/yyyy; .getTime() in milliseconds
 
   public goodFriday =  this.easterSunday - (2 * 86400000);// as milliseconds remove 2 days worth of milliseconds; 
   public heartOfTheEarth = this. easterSunday - 86400000;

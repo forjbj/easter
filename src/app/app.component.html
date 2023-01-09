@@ -1,6 +1,7 @@
 <div [ngClass]="countdown == true ? 'countdownPage' : 'easterPage'"> 
     <div *ngIf="countdown">
         <br>
+        <h1 class="closeColour">{{pageTitle}}</h1>
         <h1>EASTER SUNDAY</h1>
         <h3 class="reduceMargin">is in</h3>
         <h1>{{time.days}} Days</h1>
@@ -8,9 +9,29 @@
         <h3>{{time.minutes}} Minutes</h3>
         <h4 class="reduceMargin">and</h4>
         <h4>{{time.seconds}} Seconds</h4>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
-    <h1>{{pageTitle}}</h1>
-    <div class="widget">
+    <div *ngIf="countdown; else else_title" class="widget">
         <app-bible-verse></app-bible-verse>
     </div>
+    <ng-template #else_title>
+        <div>
+            <br>
+            <h1 class="easterColour">{{pageTitle}}</h1>
+            <br>
+            <h2 class="easterScripture">
+                He is not here: for he is risen, as he said. Come, see the place where the Lord lay.
+            </h2>
+            <h5>
+                Matthew 28:6
+            </h5>
+        </div>
+    </ng-template>
+
 </div>
