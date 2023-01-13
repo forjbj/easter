@@ -120,7 +120,7 @@ pub fn easter_sunday(current_year:i32) -> String {
             day = iso;
 
         }
-        let easter_sunday = format!("{}-{}-{}", current_year, month, day);
+        let easter_sunday = format!("{}/{}/{}", month,day,current_year);//javascript only works in american money; utc or locale time doesn't work give weird answers and offsets.
         return easter_sunday;
     }
 

@@ -26,7 +26,8 @@ export class TimeService {
   }
 
   constructor() {
-    this.easterSunday = wasm.easter_sunday(this.time.getFullYear());
+    this.easterSunday = wasm.easter_sunday(this.time.getFullYear()); // this is in american format MM//DD/YYYY as javascript doesn't work without it
+
     this.easter = new Date (this.easterSunday).getTime();
     if (this.time.getTime() > (this.easter + 86400000)){ //add 24 hours (in milliseconds) to bring to easter monday
       this.easterSunday = wasm.easter_sunday(this.time.getFullYear() + 1);
