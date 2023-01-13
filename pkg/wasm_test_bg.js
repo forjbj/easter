@@ -134,6 +134,23 @@ export function render_widget() {
     }
 }
 
+/**
+* @param {number} current_year
+* @returns {string}
+*/
+export function easter_sunday(current_year) {
+    try {
+        const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
+        wasm.easter_sunday(retptr, current_year);
+        var r0 = getInt32Memory0()[retptr / 4 + 0];
+        var r1 = getInt32Memory0()[retptr / 4 + 1];
+        return getStringFromWasm0(r0, r1);
+    } finally {
+        wasm.__wbindgen_add_to_stack_pointer(16);
+        wasm.__wbindgen_free(r0, r1);
+    }
+}
+
 function handleError(f, args) {
     try {
         return f.apply(this, args);
