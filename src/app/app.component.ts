@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { TimeService } from './time.service';
 import * as bibleJson from '../assets/bible/Bible.json';
+import * as wasm from '../../pkg';
+
 
 @Component({
   selector: 'app-root',
@@ -19,7 +21,17 @@ export class AppComponent {
   public countdown: boolean = true;
 
   constructor(public time: TimeService){
-    this.now = this.time.time.getTime();
+    this.easterSunday = wasm.easter_sunday(this.time.timeNow.getFullYear()); // this is in american format MM//DD/YYYY as javascript doesn't work without it
+
+    this.time.easter = new Date (this.easterSunday).getTime();
+    if (this.time.timeNow.getTime() > (this.time.easter + 86400000)){ //add 24 hours (in milliseconds) to bring to easter monday
+      this.easterSunday = wasm.easter_sunday(this.time.timeNow.getFullYear() + 1);
+      this.time.easter = new Date (this.easterSunday).getTime();
+    }
+    
+    this.time.timeDifference()
+
+    this.now = this.time.timeNow.getTime();
     this.goodFriday =  this.time.easterSunday - (2 * 86400000);// as milliseconds remove 2 days worth of milliseconds; 
     this.heartOfTheEarth = this. time.easterSunday - 86400000;
     this.easterOver = this.time.easterSunday + 86400000;

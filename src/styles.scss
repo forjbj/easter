@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body, html{
-    height: 100vh;
+    position: relative; //needed to keep bible widget on bottom
+    min-height: 100vh;
     margin: 0;
     text-align: center;
     color: white;

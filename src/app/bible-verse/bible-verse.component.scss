@@ -16,9 +16,10 @@
     padding-left: 1em;
 }
 .refresh {
-    font-size: 1.3rem;
-    margin-right: 0.3rem;
-    text-align: center;
+    font-size: 1.5rem;
+    rotate: -45deg;
+    margin: 0 0.3rem;
+    // text-align: center;
     cursor: pointer;
     transition: font-weight 0.3s linear;
     &:hover {
