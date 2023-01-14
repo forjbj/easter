@@ -11,7 +11,7 @@ import * as wasm from '../../pkg';
 })
 export class AppComponent {
   title = 'easter-countdown';
-  public now :any //= new Date().getTime();
+  // public now :any //= new Date().getTime();
   public easterSunday: any;
   public goodFriday: any; 
   public heartOfTheEarth: any;
@@ -28,24 +28,26 @@ export class AppComponent {
       this.easterSunday = wasm.easter_sunday(this.time.timeNow.getFullYear() + 1);
       this.time.easter = new Date (this.easterSunday).getTime();
     }
-    
+
     this.time.timeDifference()
 
-    this.now = this.time.timeNow.getTime();
-    this.goodFriday =  this.time.easterSunday - (2 * 86400000);// as milliseconds remove 2 days worth of milliseconds; 
-    this.heartOfTheEarth = this. time.easterSunday - 86400000;
-    this.easterOver = this.time.easterSunday + 86400000;
+    this.time.timeNumber = this.time.timeNow.getTime();
+    this.goodFriday =  this.time.easter - (2 * 86400000);// as milliseconds remove 2 days worth of milliseconds; 
+    this.heartOfTheEarth = this. time.easter - 86400000;
+    this.easterOver = this.time.easter + 86400000;
 
-    if (this.now > this.goodFriday && this.now < this.heartOfTheEarth) {
+    if (this.time.timeNumber > this.goodFriday && this.time.timeNumber < this.heartOfTheEarth) {
       this.pageTitle ="GOOD FRIDAY"
-    } else if (this.now > this.heartOfTheEarth && this.now < this.easterSunday) {
+    } else if (this.time.timeNumber > this.heartOfTheEarth && this.time.timeNumber < this.time.easter) {
       this.pageTitle ="EASTER SATURDAY"
-    } else if (this.now > this.easterSunday && this.now <  this.easterOver) { 
+    } else if (this.time.timeNumber > this.time.easter && this.time.timeNumber <  this.easterOver) { 
       this.pageTitle ="EASTER SUNDAY"
       this.countdown = false;
     } else {
       this.pageTitle ="..."
     }
+
+    console.log(this.time.easter)
   }
 
    ngAfterViewInit() {

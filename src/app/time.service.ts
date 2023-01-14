@@ -5,8 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class TimeService {
   
-  // public time = new Date; //needed twice or won't countdown
-  public timeNow = new Date(); //needed twice or won't countdown
+  public timeNow = new Date;
+  // public timeNow = new Date("03/31/2024 23:00:01"); //for testing
+  public timeNumber: any;
   public easterSunday: any;
   public easter: any;
   public timeDiff: any;
@@ -17,6 +18,7 @@ export class TimeService {
 
   public timeDifference(){
     let time = new Date;
+    // let time = this.timeNow; //for testing
     this.timeDiff = this.easter - time.getTime();
     this.days = Math.floor(this.timeDiff/86400000); // convert milliseconds to days:- 1000 * 60 * 60 * 24 = 86400000)
     this.hours = Math.floor((this.timeDiff%86400000)/3600000);  //convert milliseconds to hours left in day:- (time_difference%(1000 * 60 * 60 * 24))/(1000 * 60 * 60) 
