@@ -1,10 +1,10 @@
 <!-- This outside/fullpage division is necessary for the nav to stay sticky in apple stuff; don't ask, I don't know either-->
 <div>
     <div class="bibleHeader">
-        <div class="title">
+        <div     [ngClass]="time.scriptureCode == 0 ? 'leftTitle' : 'middleTitle'">
             {{bookName}} {{chapter}}
         </div>
-        <div (click) = "load()" class="refresh" >
+        <div *ngIf="time.scriptureCode == 0" (click) = "load()" class="refresh" >
             &#x27F3;
         </div>
         <div>

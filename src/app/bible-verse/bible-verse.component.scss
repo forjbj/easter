@@ -10,7 +10,13 @@
     justify-content:center;
     background-color: rgba($color: #32563b, $alpha: 0.7);
 }
-.title {
+.leftTitle {
+    font-variant-caps: small-caps;
+    font-weight: bold;
+    padding-left: 1em;
+}
+.middleTitle {
+    text-align: center;
     font-variant-caps: small-caps;
     font-weight: bold;
     padding-left: 1em;

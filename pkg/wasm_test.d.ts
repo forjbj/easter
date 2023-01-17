@@ -1,9 +1,10 @@
 /* tslint:disable */
 /* eslint-disable */
 /**
+* @param {number} code
 * @returns {string}
 */
-export function render_widget(): string;
+export function render_widget(code: number): string;
 /**
 * @param {number} current_year
 * @returns {string}

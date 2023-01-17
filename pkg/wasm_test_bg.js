@@ -1,4 +1,4 @@
-import { read_file } from 'src/app/app.component.ts';
+import { read_file } from 'src/app/bible-verse/bible-verse.component.ts';
 import * as wasm from './wasm_test_bg.wasm';
 
 const heap = new Array(32).fill(undefined);
@@ -119,12 +119,13 @@ function getStringFromWasm0(ptr, len) {
     return cachedTextDecoder.decode(getUint8Memory0().subarray(ptr, ptr + len));
 }
 /**
+* @param {number} code
 * @returns {string}
 */
-export function render_widget() {
+export function render_widget(code) {
     try {
         const retptr = wasm.__wbindgen_add_to_stack_pointer(-16);
-        wasm.render_widget(retptr);
+        wasm.render_widget(retptr, code);
         var r0 = getInt32Memory0()[retptr / 4 + 0];
         var r1 = getInt32Memory0()[retptr / 4 + 1];
         return getStringFromWasm0(r0, r1);
@@ -163,7 +164,7 @@ function getArrayU8FromWasm0(ptr, len) {
     return getUint8Memory0().subarray(ptr / 1, ptr / 1 + len);
 }
 
-export function __wbg_readfile_fbb56beb6aa63b65() {
+export function __wbg_readfile_8ef0b5a06d36cd6d() {
     const ret = read_file();
     return addHeapObject(ret);
 };

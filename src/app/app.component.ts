@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TimeService } from './time.service';
-import * as bibleJson from '../assets/bible/Bible.json';
 import * as wasm from '../../pkg';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,17 +10,17 @@ import * as wasm from '../../pkg';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'easter-countdown';
   // public now :any //= new Date().getTime();
   public easterSunday: any;
   public goodFriday: any; 
   public heartOfTheEarth: any;
   public easterOver: any;
 
-  public pageTitle: string;
   public countdown: boolean = true;
 
-  constructor(public time: TimeService){
+  constructor(public time: TimeService,
+              private router: Router){
+
     this.easterSunday = wasm.easter_sunday(this.time.timeNow.getFullYear()); // this is in american format MM//DD/YYYY as javascript doesn't work without it
 
     this.time.easter = new Date (this.easterSunday).getTime();
@@ -37,28 +37,28 @@ export class AppComponent {
     this.easterOver = this.time.easter + 86400000;
 
     if (this.time.timeNumber > this.goodFriday && this.time.timeNumber < this.heartOfTheEarth) {
-      this.pageTitle ="GOOD FRIDAY"
+      if ((this.goodFriday + 43200000) < this.time.timeNumber && (this.goodFriday + 54000000) > this.time.timeNumber){
+        this.time.goodFridayDarkness = true;
+      } else if ((this.goodFriday + 54000000) < this.time.timeNumber) {
+        this.time.goodFridayGrave = true;
+      } else {
+        this.time.goodFridayMorning = true;
+      }
+      this.time.scriptureCode = 1; // change to load Luke 23
+      this.router.navigate(["goodFriday"]);
+
     } else if (this.time.timeNumber > this.heartOfTheEarth && this.time.timeNumber < this.time.easter) {
-      this.pageTitle ="EASTER SATURDAY"
+      this.time.scriptureCode = 0;
+      this.router.navigate(["easterSaturday"]);
     } else if (this.time.timeNumber > this.time.easter && this.time.timeNumber <  this.easterOver) { 
-      this.pageTitle ="EASTER SUNDAY"
-      this.countdown = false;
+      this.time.scriptureCode = 2; //change to load Matthew 28
+      this.router.navigate(["easterSunday"]);
     } else {
-      this.pageTitle ="..."
+      this.time.scriptureCode = 0; //random scripture code for WASM function
+      this.router.navigate(["easterCountdown"]);
+      // this.time.scriptureCode = 0; //testing scripture code for WASM function
+      // this.router.navigate(["easterSaturday"]); //for testing
     }
-
-    console.log(this.time.easter)
   }
-
-   ngAfterViewInit() {
-    if (this.countdown){
-      setInterval(()=>{this.time.timeDifference();
-        // console.log(this.time.seconds)
-      }, 1000)
-    }
-   }
-
 }
-export function read_file() {
-  return JSON.stringify(bibleJson); // WASM WORKS! don't touch
-}
+  

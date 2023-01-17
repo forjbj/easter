@@ -1,0 +1,49 @@
+<div ngClass="{{backgroundPage}}"> 
+    <div>
+        <br>
+        <h1 class="closeColour">GOOD FRIDAY</h1>
+        <h1>{{time.days}} Day<span *ngIf="time.days != 1" >s</span></h1>
+        <h2>{{time.hours}} Hour<span *ngIf="time.hours != 1" >s</span></h2>
+        <h3>{{time.minutes}} Minute<span *ngIf="time.minutes != 1" >s</span></h3>
+        <h4 class="reduceMargin">and</h4>
+        <h4>{{time.seconds}} Second<span *ngIf="time.seconds != 1" >s</span></h4>
+        <h3 class="reduceMargin">until</h3>
+        <h2>EASTER SUNDAY</h2>
+    </div>
+    <div class="widgetWrapper">
+        <div class="widget">
+            <app-bible-verse></app-bible-verse>
+        </div>    
+    </div>
+</div>
+
+
+<!-- <div class="threeHours">
+    <div class="clock">
+        <h1>
+            {{goodFridayTime}}
+        </h1>
+    </div>
+    <div>
+        <div class="scriptOne">
+            <h3>
+                And it was about the sixth hour, and there was a darkness over all the earth until the ninth hour.
+                <span class="scriptOneNote">(Midday to 3pm)</span>
+            </h3>
+        </div>
+        <div class="scriptTwo">
+            <h3>
+                And the sun was darkened, and the veil of the temple was rent in the midst.
+            </h3>
+        </div>
+        <div class="scriptThree">
+            <h3>
+                And when Jesus had cried with a loud voice, he said, Father, into thy hands I commend my spirit: and having said thus, he gave up the ghost.        </h3>
+        </div>
+    </div>
+    <div class="scriptRef">
+        <h5>
+            Luke 23:44-46
+        </h5>
+    </div>
+</div> -->

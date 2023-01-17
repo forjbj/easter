@@ -2,6 +2,7 @@ import { Component, ElementRef } from '@angular/core';
 import * as bibleJson from '../../assets/bible/Bible.json';
 import * as wasm from '../../../pkg';
 import { Meta, Title } from '@angular/platform-browser';
+import { TimeService } from '../time.service';
 
 
 @Component({
@@ -23,13 +24,15 @@ export class BibleVerseComponent {
   
   constructor( public title: Title,
              public meta: Meta,
-             public elementRef:ElementRef,) {
+             public elementRef:ElementRef,
+             public time: TimeService) {
 
   this.load()
 
   }
 
   load() {
+    // navigator.vibrate(300);
     this.threadWASM();
     setTimeout(() => { //setTimeOut 0.5secs; necessary as bibleInfo not populated on start ??? not sure why; reload produces last book info without this
       this.bibleInfo()
@@ -42,11 +45,11 @@ export class BibleVerseComponent {
       worker.onmessage = ({ data }) => {
         this.result = data;
       };
-      worker.postMessage(wasm.render_widget());
+      worker.postMessage(wasm.render_widget(this.time.scriptureCode));
     } else {
       // Web workers are not supported in this environment.
       // You should add a fallback so that your program still executes correctly.
-      this.result = wasm.render_widget();
+      this.result = wasm.render_widget(this.time.scriptureCode);
     }
   }
 
@@ -59,7 +62,17 @@ export class BibleVerseComponent {
       this.chapter = Number(splits[2]) + 1; // add 1 to get right chapter number
       this.bookName = this.bible[this.testament].books[this.bookSelected].bookName;
       const ver = name?.getElementsByTagName("DIV");
-      this.verse = Math.floor(Math.random() * ver.length) + 1;
+      if (this.time.scriptureCode == 1){
+        if (this.time.goodFridayMorning == true) {
+          this.verse = 33
+        } else {
+          this.verse = 44
+        } 
+      } else if (this.time.scriptureCode == 2) {
+        this.verse = 6
+      } else {
+        this.verse = Math.floor(Math.random() * ver.length) + 1;
+      }
 
       ver[this.verse -1].scrollIntoView({
                             behavior: 'auto',
@@ -69,7 +82,6 @@ export class BibleVerseComponent {
     }
   }
 }
-
-export function read_file() {
-return JSON.stringify(bibleJson); // WASM WORKS! don't touch
+export function read_file() { // MUST be in here as lib.rs points here
+  return JSON.stringify(bibleJson); // WASM WORKS! don't touch
 }

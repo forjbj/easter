@@ -8,32 +8,44 @@ use serde_json::Value as jsonValue;
 use serde_json::Value::Null as jsonNull;
 use rand::prelude::*;
 
-#[wasm_bindgen(module = "src/app/app.component.ts")]
+#[wasm_bindgen(module = "src/app/bible-verse/bible-verse.component.ts")]
 extern "C" {
     #[wasm_bindgen]
     fn read_file() -> JsValue;
 }
 
 #[wasm_bindgen]
-pub fn render_widget() -> String {  //need to be string for serde_json to index
-    // random generate book
-    let mut test_rng = thread_rng();
-    let test: usize = test_rng.gen_range(0..2); // excludes higher number
+pub fn render_widget(code: usize) -> String {  //need to be string for serde_json to index
+    let test: usize;
     let book: usize;
-    if test == 0 {
-        let mut book_rng = thread_rng();
-        book = book_rng.gen_range(0..39);
-    } else {
-        let mut book_rng = thread_rng();
-        book = book_rng.gen_range(0..27);
-    }
+    let chap: usize;
 
     let mut result: String;
-    let psalms: bool;
-    if test == 0 && book == 18 { // use this to check input array values against Psalms for section rendering
-        psalms = true; 
+    let mut psalms = false;
+
+    if code == 2 {
+        test = 1;
+        book = 0; // Matthew 28
+        // chap = 27;
+    } else if code == 1 {
+        test = 1;
+        book = 2; // Luke 23
+        // chap = 22;
     } else {
-        psalms = false;
+        // random generate book
+        let mut test_rng = thread_rng();
+        test = test_rng.gen_range(0..2); // excludes higher number
+        if test == 0 {
+            let mut book_rng = thread_rng();
+            book = book_rng.gen_range(0..39);
+        } else {
+            let mut book_rng = thread_rng();
+            book = book_rng.gen_range(0..27);
+        }
+
+        if test == 0 && book == 18 { // use this to check input array values against Psalms for section rendering
+            psalms = true; 
+        }
     }
 
     let file = read_file();
@@ -42,12 +54,17 @@ pub fn render_widget() -> String {  //need to be string for serde_json to index
 
     //because of type change from javascript to rust: first Array in Object has the items labelled "0" and "1" (numbers in strings) **CAN'T CHANGE JSON
     let bible_book = &contents[format!("{}", &test)]["books"][&book];
-
     let current = bible_book["chapters"].as_array().unwrap();
-    let num_chapters = current.len();
-    let mut chap_rng = thread_rng();
-    let chap = chap_rng.gen_range(0..num_chapters);
-
+   
+    if code == 2 {
+        chap = 27; //Matthew 28
+    } else if code == 1 {
+        chap = 22; // Luke 23
+    } else {
+        let num_chapters = current.len();
+        let mut chap_rng = thread_rng();
+        chap = chap_rng.gen_range(0..num_chapters);
+    }
     result = format!("<section class = \"head\" id =\"{}-{}-{}\">", test, book, chap);
 
     let chapter = &current[chap];

@@ -6,12 +6,20 @@ import { AppComponent } from './app.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { BibleVerseComponent } from './bible-verse/bible-verse.component';
 import { SafePipe } from './safe.pipe';
+import { EasterSundayComponent } from './easter-sunday/easter-sunday.component';
+import { GoodFridayComponent } from './good-friday/good-friday.component';
+import { EasterCountdownComponent } from './easter-countdown/easter-countdown.component';
+import { EasterSaturdayComponent } from './easter-saturday/easter-saturday.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BibleVerseComponent,
     SafePipe,
+    EasterSundayComponent,
+    GoodFridayComponent,
+    EasterCountdownComponent,
+    EasterSaturdayComponent,
   ],
   imports: [
     BrowserModule,

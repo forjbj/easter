@@ -1,0 +1,30 @@
+.easterPage {
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+    min-height: 100vh;//min-height necessary for pics - that took hours
+    width: 100vw;
+    background-image: url("../../assets/backgrounds/Background Easter.png");
+    background-size: cover;
+    background-position: center center;
+}
+.easterColour {
+    color: #32563b;
+    text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white;
+}
+.widget {
+    // position: absolute;
+    // bottom: 0.3rem;
+    // left: 50%;
+    // transform: translateX(-50%);
+    margin: auto;
+    width: 100%; //necessary or too skinny
+    max-width: 22rem; // heigth needs to be set on bible class in bible-verse component
+    max-height: 12rem;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    // margin: 0 ;
+    bottom: 1rem;
+    border-radius: 0.3rem;
+    text-align: left;
+    @media (min-width: 720px) {
+        max-width: 30rem;
+    }
+}

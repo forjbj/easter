@@ -1,0 +1,86 @@
+.countdownPage {
+    min-height: 100vh;//min-height necessary for pics - that took hours
+    width: 100vw;
+    background-image: url("../../assets/backgrounds/Easter-CountdownBackground-Portrait.png");
+    background-size: cover;
+    background-position: center center;
+    @media (orientation:landscape) {
+        background-image: url(("../../assets/backgrounds/Easter-CountdownBackground-Landscape.png"));
+    }
+}
+.darknessPage {
+    min-height: 100vh;//min-height necessary for pics - that took hours
+    width: 100vw;
+    background-color: black;
+}.gravePage {
+    min-height: 100vh;//min-height necessary for pics - that took hours
+    width: 100vw;
+    background-image: url("../../assets/backgrounds/Easter-CountdownBackground-Portrait.png");
+    background-size: cover;
+    background-position: center center;
+    @media (orientation:landscape) {
+        background-image: url(("../../assets/backgrounds/Easter-CountdownBackground-Landscape.png"));
+    }
+}
+.closeColour {
+    color: red;
+    text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white;
+    margin-top: 0;
+    padding-top: 0.5rem;
+}
+
+h1, h2, h3, h4, h5 {
+    text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+}
+.widgetWrapper {
+    min-height: 12rem; //necessary as widget class is position:absolute and moves over top of countdown
+}
+.widget {
+    position: absolute;
+    bottom: 0.3rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%; //necessary or too skinny
+    max-width: 22rem; // heigth needs to be set on bible class in bible-verse component
+    max-height: 11rem;
+    background-color: rgba($color: #000000, $alpha: 0.7);
+    margin: 0 ;
+    bottom: 1rem;
+    border-radius: 0.3rem;
+    text-align: left;
+    @media (min-width: 720px) {
+        max-width: 30rem;
+    }
+}
+
+// .threeHours {
+//     // display: table;
+//     // position: absolute;
+//     display: grid;
+//     grid-template-columns: 1;
+//     grid-template-rows: 3;
+//     min-height: 100vh;
+//     text-align: left;
+//     background-color: black;
+//     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+// }
+// .clock {
+//     grid-row: 1;
+//     text-align: center;
+//     // display: table-row;
+//     // vertical-align: top;
+// }
+// .scriptOne, .scriptTwo, .scriptThree {
+//     margin: 1rem;
+//     transition: 0.7s;
+// }
+// .scriptOneNote {
+//     text-align: center;
+//     color: #ccc;
+// }
+// .scriptRef {
+//     grid-row: 3;
+//     text-align: right;
+//     margin: 1rem;
+//     font-variant: small-caps;
+// }
