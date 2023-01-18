@@ -2,7 +2,7 @@
 //::ng-deep necessary to work with wasm innerHTML
 
 .bibleHeader {
-    border-radius: 0.5rem;
+    // border-radius: 0.3rem;
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     display: grid;
     grid-template-columns: 1fr auto auto;
@@ -80,7 +80,7 @@
     grid-gap: 1rem; // needed to stop words scrolling right
     grid-template-columns: 3rem auto;
     @media (max-width: 767px) {
-        grid-template-columns: 1rem auto; // verse number column smaller for small screens
+        grid-template-columns: 1.5rem auto; // verse number column smaller for small screens
     }
 }
 ::ng-deep .firstVerse{

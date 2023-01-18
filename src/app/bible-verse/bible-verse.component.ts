@@ -65,9 +65,11 @@ export class BibleVerseComponent {
       if (this.time.scriptureCode == 1){
         if (this.time.goodFridayMorning == true) {
           this.verse = 33
-        } else {
+        } else if (this.time.goodFridayDarkness == true){
           this.verse = 44
-        } 
+        } else {
+          this.verse = 46
+        }
       } else if (this.time.scriptureCode == 2) {
         this.verse = 6
       } else {

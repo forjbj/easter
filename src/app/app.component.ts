@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  // public now :any //= new Date().getTime();
+
   public easterSunday: any;
   public goodFriday: any; 
   public heartOfTheEarth: any;
