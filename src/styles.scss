@@ -5,4 +5,5 @@ body, html{
     margin: 0;
     text-align: center;
     color: white;
+    -webkit-tap-highlight-color: transparent; //need for chrome
 }
