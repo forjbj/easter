@@ -1,12 +1,9 @@
 .saturdayPage {
     min-height: 100vh;//min-height necessary for pics - that took hours
     width: 100vw;
-    background-image: url("../../assets/backgrounds/Easter-CountdownBackground-Portrait.png");
+    background-image: url("../../assets/backgrounds/Background_Easter_Saturday.png");
     background-size: cover;
     background-position: center center;
-    @media (orientation:landscape) {
-        background-image: url(("../../assets/backgrounds/Easter-CountdownBackground-Landscape.png"));
-    }
 }
 .saturdayColour {
     color: #32563b;
