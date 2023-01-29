@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  public easterSunday: any;
+  // public easterSunday: any;
   public goodFriday: any; 
   public heartOfTheEarth: any;
   public easterOver: any;
@@ -21,13 +21,17 @@ export class AppComponent {
   constructor(public time: TimeService,
               private router: Router){
 
-    this.easterSunday = wasm.easter_sunday(this.time.timeNow.getFullYear()); // this is in american format MM//DD/YYYY as javascript doesn't work without it
+    this.time.easterSunday = wasm.easter_sunday(this.time.timeNow.getFullYear()); // this is in american format MM//DD/YYYY as javascript doesn't work without it
 
-    this.time.easter = new Date (this.easterSunday).getTime();
+    this.time.easter = new Date (this.time.easterSunday).getTime();
     if (this.time.timeNow.getTime() > (this.time.easter + 86400000)){ //add 24 hours (in milliseconds) to bring to easter monday
-      this.easterSunday = wasm.easter_sunday(this.time.timeNow.getFullYear() + 1);
-      this.time.easter = new Date (this.easterSunday).getTime();
+      this.time.easterSunday = wasm.easter_sunday(this.time.timeNow.getFullYear() + 1);
+      this.time.easter = new Date (this.time.easterSunday).getTime();
     }
+
+    //set date for countdown page
+    this.time.easterDateFormat();
+    
 
     this.time.timeDifference()
 
