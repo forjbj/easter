@@ -25,12 +25,10 @@ pub fn render_widget(code: usize) -> String {  //need to be string for serde_jso
 
     if code == 2 {
         test = 1;
-        book = 0; // Matthew 28
-        // chap = 27;
+        book = 0; // Matthew 28 - Easter Sunday scripture
     } else if code == 1 {
         test = 1;
-        book = 2; // Luke 23
-        // chap = 22;
+        book = 2; // Luke 23 - Good Friday scripture
     } else {
         // random generate book
         let mut test_rng = thread_rng();
