@@ -1,26 +1,33 @@
-.countdownPage {
+.crossPage {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-rows: 5;
     min-height: 100vh;//min-height necessary for pics - that took hours
-    width: 100vw;
-    background-image: url("../../assets/backgrounds/Easter-CountdownBackground-Portrait.png");
+    background-image: url("../../assets/backgrounds/Background_Cross.png");
     background-size: cover;
     background-position: center center;
-    @media (orientation:landscape) {
-        background-image: url(("../../assets/backgrounds/Easter-CountdownBackground-Landscape.png"));
-    }
 }
 .darknessPage {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-rows: 6;
     min-height: 100vh;//min-height necessary for pics - that took hours
     width: 100vw;
     background-color: black;
 }.gravePage {
-    min-height: 100vh;//min-height necessary for pics - that took hours
-    width: 100vw;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    grid-template-rows: 4;
+    min-height: 100vh;//min-height necessary for pics - that took hour;
     background-image: url("../../assets/backgrounds/Background_Easter_Saturday.png");
     background-size: cover;
     background-position: center center;
-    // @media (orientation:landscape) {
-    //     background-image: url(("../../assets/backgrounds/Easter-CountdownBackground-Landscape.png"));
-    // }
+}
+.info {
+    grid-row: 5;
 }
 .closeColour {
     max-width: 17rem;
@@ -33,6 +40,7 @@ h1, h2, h3, h4, h5 {
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
 }
 .widgetWrapper {
+    grid-row: 2;
     min-height: 12rem; //necessary as widget class is position:absolute and moves over top of countdown
 }
 .widget {

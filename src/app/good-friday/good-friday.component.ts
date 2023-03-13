@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { timer } from 'rxjs';
 import { TimeService } from '../time.service';
 
 @Component({
@@ -13,7 +12,7 @@ export class GoodFridayComponent {
 
   constructor(public time: TimeService){
     if (this.time.goodFridayMorning == true){
-      this.backgroundPage = "countdownPage";
+      this.backgroundPage = "crossPage";
     } else if (this.time.goodFridayDarkness == true) {
       this.backgroundPage = "darknessPage";
     } else {
@@ -21,6 +20,7 @@ export class GoodFridayComponent {
     }
   }
   ngAfterViewInit() {
+    //Countdown timer
     setInterval(()=>{this.time.timeDifference();
       // console.log(this.time.seconds)
     }, 1000)

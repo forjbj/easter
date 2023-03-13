@@ -1,12 +1,19 @@
 .countdownPage {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-rows: 5;
     min-height: 100vh;//min-height necessary for pics - that took hours
     width: 100vw;
-    background-image: url("../../assets/backgrounds/Easter-CountdownBackground-Portrait.png");
+    background-image: url("../../assets/backgrounds/Background_Easter.png");
     background-size: cover;
     background-position: center center;
-    @media (orientation:landscape) {
-        background-image: url(("../../assets/backgrounds/Easter-CountdownBackground-Landscape.png"));
-    }
+    // @media (orientation:landscape) {
+    //     background-image: url(("../../assets/backgrounds/Easter-CountdownBackground-Landscape.png"));
+    // }
+}
+.count {
+    grid-row: 4;
 }
 .closeColour {
     color: red;
@@ -23,10 +30,11 @@ h1, h2, h3, h4, h5 {
     min-height: 12rem; //necessary as widget class is position:absolute and moves over top of countdown
 }
 .widget {
-    position: absolute;
-    bottom: 0.3rem;
-    left: 50%;
-    transform: translateX(-50%);
+    grid-row: 2;
+    // position: absolute;
+    // bottom: 0.3rem;
+    // left: 50%;
+    // transform: translateX(-50%);
     width: 100%; //necessary or too skinny
     max-width: 22rem; // heigth needs to be set on bible class in bible-verse component
     max-height: 13rem;
