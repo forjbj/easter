@@ -49,6 +49,7 @@ export class AppComponent {
         this.time.goodFridayMorning = true;
       }
       this.time.scriptureCode = 1; // change to load Luke 23
+      this.time.collapsed = false; // show scripture
       this.router.navigate(["goodFriday"]);
 
     } else if (this.time.timeNumber > this.heartOfTheEarth && this.time.timeNumber < this.time.easter) {
@@ -56,6 +57,7 @@ export class AppComponent {
       this.router.navigate(["easterSaturday"]);
     } else if (this.time.timeNumber > this.time.easter && this.time.timeNumber <  this.easterOver) { 
       this.time.scriptureCode = 2; //change to load Matthew 28
+      this.time.collapsed = false; // show scripture
       this.router.navigate(["easterSunday"]);
     } else {
       this.time.scriptureCode = 0; //random scripture code for WASM function

@@ -20,8 +20,7 @@ export class BibleVerseComponent {
   public bookName?: any;
 
   public bible: any = bibleJson;
-
-  
+    
   constructor( public title: Title,
              public meta: Meta,
              public elementRef:ElementRef,

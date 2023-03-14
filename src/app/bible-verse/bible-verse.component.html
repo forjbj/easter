@@ -1,14 +1,23 @@
 <!-- This outside/fullpage division is necessary for the nav to stay sticky in apple stuff; don't ask, I don't know either-->
-<div>
+<div id="bibleWidget" >
     <div class="bibleHeader">
-        <div     [ngClass]="time.scriptureCode == 0 ? 'leftTitle' : 'middleTitle'">
+        <div class="leftTitle">
             {{bookName}} {{chapter}}
         </div>
-        <div *ngIf="time.scriptureCode == 0" (click) = "load()" class="refresh" >
+        <div
+            (click)="time.collapsed = !time.collapsed" 
+            [ngClass]="time.collapsed == true ? 'openSymbol' : 'closeSymbol'">
         </div>
-        <div>
-            &nbsp;
+        <div *ngIf="time.scriptureCode == 0; " 
+            (click) = "load()" 
+            class="refresh" >
         </div>
+        <!-- <ng-template #spare >
+            <div style="width: 1rem; height: 1rem;">
+            </div>    
+        </ng-template> -->
     </div>
-    <div class="bible" [innerHTML] ="result | safe: 'html'"></div>
+        <div [ngClass]="time.collapsed == true ? 'bibleHide' : 'bibleShow'" 
+            [innerHTML] ="result | safe: 'html'">
+        </div>
 </div>

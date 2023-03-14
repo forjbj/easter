@@ -1,32 +1,77 @@
 
 //::ng-deep necessary to work with wasm innerHTML
-
+#bibleWidget {
+    margin: 0;
+    position: sticky;
+    bottom: 0;
+    background-color: #000000;
+    text-align: left;
+    transition: opacity 0.5s ease-in-out;
+}
 .bibleHeader {
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     display: grid;
-    grid-template-columns: 1fr auto auto;
-    align-items:center;
-    justify-content:center;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: center;
+    justify-items: center;
     background-color: rgba($color: #32563b, $alpha: 0.7);
 }
 .leftTitle {
+    justify-self: left;
     font-variant-caps: small-caps;
     font-weight: bold;
     padding-left: 1em;
 }
-.middleTitle {
-    text-align: center;
-    font-variant-caps: small-caps;
-    font-weight: bold;
-    padding-left: 1em;
+// .middleTitle {
+//     text-align: center;
+//     font-variant-caps: small-caps;
+//     font-weight: bold;
+//     padding-left: 1em;
+// }
+.openSymbol {
+    justify-self: center;
+    height: 1rem;
+    width: 2rem;
+    margin: 0.3rem;
+    background-image: url(../../assets/collapsed.png);
+    background-position: center center;
+    background-size: contain;
+    opacity: 0.8;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+    transition: rotate 0.2s ease-in-out;
+    &:hover {
+        opacity: 1;
+    }
 }
+.closeSymbol {
+    justify-self: center;
+    height: 1rem;
+    width: 2rem;
+    margin: 0.3rem;
+    background-image: url(../../assets/collapsed.png);
+    background-position: center center;
+    background-size: contain;
+    opacity: 0.8;
+    rotate: 180deg;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+    transition: rotate 0.2s ease-in-out;
+    &:hover {
+        opacity: 1;
+    }
+}
+
 .refresh {
+    justify-self: right;
     height: 1rem;
     width: 1rem;
     margin: 0.3rem;
+    padding-right: 1rem;
     background-image: url(../../assets/refresh.png);
     background-position: center center;
     background-size: contain;
+    background-repeat: no-repeat;
     opacity: 0.8;
     cursor: pointer;
     transition: opacity 0.5s ease-in-out;
@@ -46,10 +91,18 @@
         transform:rotate3d(1,2,3,360deg); 
     } 
 }
-.bible {
-    margin-top: 0.1rem;
-    height: 9rem;
+.bibleHide  {
+    // display: none;
+    opacity: 0;
+    height: 0;
+    transition: opacity 0.5s ease-in-out;
+    overflow: hidden;
+}
+.bibleShow {
+    opacity: 1;
+    height: 10rem;
     overflow-y: scroll;
+    transition: opacity 0.5s ease-in-out;
 }
 //  increase font size for readablility (I'm old)
 ::ng-deep .fontType {

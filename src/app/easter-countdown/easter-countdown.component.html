@@ -1,19 +1,13 @@
 <div class="countdownPage"> 
-    <div class="count">
-        <br>
-        <h1>{{time.days}} Day<span *ngIf="time.days != 1" >s</span></h1>
-        <h2>{{time.hours}} Hour<span *ngIf="time.hours != 1" >s</span></h2>
-        <h3>{{time.minutes}} Minute<span *ngIf="time.minutes != 1" >s</span></h3>
-        <h4 class="reduceMargin">and</h4>
-        <h4>{{time.seconds}} Second<span *ngIf="time.seconds != 1" >s</span></h4>
-        <h3 class="reduceMargin">until</h3>
-        <h2>EASTER SUNDAY</h2>
-        <h3>{{time.easterDate}}</h3>
-    </div>
-    <div class="widgetWrapper">
-        <div class="widget">
-            <app-bible-verse></app-bible-verse>
-        </div>    
-    </div>
+    <br>
+    <br>
+    <h1>{{time.days}} Day<span *ngIf="time.days != 1" >s</span></h1>
+    <h2>{{time.hours}} Hour<span *ngIf="time.hours != 1" >s</span></h2>
+    <h3>{{time.minutes}} Minute<span *ngIf="time.minutes != 1" >s</span></h3>
+    <h4 class="reduceMargin">and</h4>
+    <h4>{{time.seconds}} Second<span *ngIf="time.seconds != 1" >s</span></h4>
+    <h3 class="reduceMargin">until</h3>
+    <h2>EASTER SUNDAY</h2>
+    <h3>{{time.easterDate}}</h3>
 </div>
 
