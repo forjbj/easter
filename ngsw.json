@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1678676837082,
+  "timestamp": 1678764567093,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -14,7 +14,7 @@
         "./73.f41189a9806f5261.js",
         "./favicon.ico",
         "./index.html",
-        "./main.379aae18dadc7b4f.js",
+        "./main.45f22dda647405c6.js",
         "./manifest.webmanifest",
         "./polyfills.b7325d3f26b01999.js",
         "./runtime.1763586d13b37d08.js",
@@ -37,6 +37,7 @@
         "./assets/backgrounds/Background_Easter.png",
         "./assets/backgrounds/Background_Easter_Saturday.png",
         "./assets/bible/Bible.json",
+        "./assets/collapsed.png",
         "./assets/icons/Easter-Countdown1000px.png",
         "./assets/icons/Easter-Countdown128-px.png",
         "./assets/icons/Easter-Countdown144-px.png",
@@ -47,6 +48,7 @@
         "./assets/icons/Easter-Countdown72-px.png",
         "./assets/icons/Easter-Countdown96-px.png",
         "./assets/refresh.png",
+        "./collapsed.23416c70b32c08e6.png",
         "./refresh.592a0ab9dc09df93.png"
       ],
       "patterns": []
@@ -62,6 +64,7 @@
     "./assets/backgrounds/Background_Easter.png": "368f747c9d69a95e2394176a47130c83dee15e9c",
     "./assets/backgrounds/Background_Easter_Saturday.png": "d129600aa8d6b2c0920c533f768c05d342ff3e33",
     "./assets/bible/Bible.json": "2efdfc9890c2846eb518c3c5eeb64e1c0277b0fc",
+    "./assets/collapsed.png": "62af0d8925536be6fa87421ae9fb9d8b7252e803",
     "./assets/icons/Easter-Countdown1000px.png": "7fddfd4aaa44505b17bcd338c8b7a194f0490783",
     "./assets/icons/Easter-Countdown128-px.png": "9b226771155566653d38c238e24f41c1e562fe72",
     "./assets/icons/Easter-Countdown144-px.png": "18596457ff8698a5b5e2a7e89db956ada4bcd2db",
@@ -72,9 +75,10 @@
     "./assets/icons/Easter-Countdown72-px.png": "e7f81a6f810c6c2cd24968fbcc3926380549cdd9",
     "./assets/icons/Easter-Countdown96-px.png": "02e518049dd7ff0673ac3720562bca5605485686",
     "./assets/refresh.png": "a056eaaffa099af1230a1ff8bb788471ee257800",
+    "./collapsed.23416c70b32c08e6.png": "62af0d8925536be6fa87421ae9fb9d8b7252e803",
     "./favicon.ico": "02e518049dd7ff0673ac3720562bca5605485686",
-    "./index.html": "5a6308abc61dca976e320a6559ef5a140e5ab994",
-    "./main.379aae18dadc7b4f.js": "903088dcf16799191f136f48144b7ef86ee20a35",
+    "./index.html": "83df68f9e40c8dcb4afe88f29bfccd7dd1e0be0a",
+    "./main.45f22dda647405c6.js": "f23687a3329696b6d4dcac21a8b232e37f1eb87b",
     "./manifest.webmanifest": "b4728bc6a7f185494c08ae217efd10ebfeb9f6e0",
     "./polyfills.b7325d3f26b01999.js": "2f48d92ffbd2644dcaaeb5b002a03c32c13f6e42",
     "./refresh.592a0ab9dc09df93.png": "a056eaaffa099af1230a1ff8bb788471ee257800",
