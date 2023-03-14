@@ -12,7 +12,6 @@ export class EasterSaturdayComponent {
 
   }
 
-
 ngAfterViewInit() {
   setInterval(()=>{this.time.timeDifference();
     // console.log(this.time.seconds)

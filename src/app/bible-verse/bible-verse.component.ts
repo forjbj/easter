@@ -31,7 +31,6 @@ export class BibleVerseComponent {
   }
 
   load() {
-    // navigator.vibrate(300);
     this.threadWASM();
     setTimeout(() => { //setTimeOut 0.5secs; necessary as bibleInfo not populated on start ??? not sure why; reload produces last book info without this
       this.bibleInfo()
