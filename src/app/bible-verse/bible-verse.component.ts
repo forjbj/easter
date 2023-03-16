@@ -30,6 +30,12 @@ export class BibleVerseComponent {
 
   }
 
+  ngAfterViewInit(){
+    //add swipe action to display bible verse
+    this.pointerEvents()
+
+  }
+
   load() {
     this.threadWASM();
     setTimeout(() => { //setTimeOut 0.5secs; necessary as bibleInfo not populated on start ??? not sure why; reload produces last book info without this
@@ -80,6 +86,29 @@ export class BibleVerseComponent {
                             inline: 'center'
                         });
     }
+  }
+  pointerEvents (){
+    const start = (e: any) => {
+      startPoint = e.clientY;
+      // console.log(e)
+    }
+    const move = (e: any) => {
+        if(e.clientY > startPoint){
+        this.time.collapsed = true;
+        // console.log(e)
+        // console.log(startPoint)
+      }
+      if (e.clientY < startPoint){
+        this.time.collapsed = false;
+        // console.log(startPoint)
+      }
+    }
+    let startPoint: any;
+    let swipe = document.getElementById('swipe');
+    swipe?.addEventListener('pointermove', move, false);
+    swipe?.addEventListener('pointerdown', start, false);
+    startPoint = null;
+    // console.log(swipe)
   }
 }
 export function read_file() { // MUST be in here as lib.rs points here

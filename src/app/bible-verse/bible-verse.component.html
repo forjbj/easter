@@ -1,9 +1,9 @@
 <div id="bibleWidget" >
-    <div class="bibleHeader">
+    <div id="swipe" class="bibleHeader">
         <div class="leftTitle">
             {{bookName}} {{chapter}}
         </div>
-        <div
+        <div 
             (click)="time.collapsed = !time.collapsed" 
             [ngClass]="time.collapsed == true ? 'openSymbol' : 'closeSymbol'">
         </div>
