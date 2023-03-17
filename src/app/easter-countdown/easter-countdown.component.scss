@@ -44,19 +44,28 @@ h1, h2, h3, h4, h5 {
 
 // cloud animation
 
-.cloudOne {
-	animation: 50s linear -10s infinite animateCloud;
+#cloudOne {
+    animation-name: animateCloud;
+    animation-duration: 50s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 	transform: scale(0.13);
 }
 
-.cloudTwo {
-	animation: 25s linear -7s infinite animateCloud;
-	transform: scale(0.24);
+#cloudTwo {
+    animation-name: animateCloud;
+    animation-duration: 25s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform: scale(0.24);
 }
 
-.cloudThree {
-	animation: 30s linear -2s infinite animateCloud;
-	transform: scale(0.33);
+#cloudThree {
+    animation-name: animateCloud;
+    animation-duration: 40s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    transform: scale(0.33);
 }
 
 // cloud objects
