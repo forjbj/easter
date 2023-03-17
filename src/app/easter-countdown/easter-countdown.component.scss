@@ -9,7 +9,7 @@
     background-position: center center;
 }
 #sun {
-    z-index: -1;
+    z-index: -3;
     position: absolute;
     // top: 50%; //randomly generated see .ts file
     // left: 15%; //randomly generated see .ts fileS
@@ -22,4 +22,106 @@
 h1, h2, h3, h4, h5 {
     z-index: 3;
     text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white;
+}
+
+
+.cloudLayer {
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: 50vh;
+    z-index: -1;
+}
+/* KEYFRAMES */
+
+@-webkit-keyframes animateCloud {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+@keyframes animateCloud {
+    0% {
+        margin-left: -1000px;
+    }
+    100% {
+        margin-left: 100%;
+    }
+}
+
+/* ANIMATIONS */
+
+.cloudOne {
+	-webkit-animation: animateCloud 35s linear infinite;
+	animation: animateCloud 40s linear infinite;
+	
+	-webkit-transform: scale(0.15);
+	transform: scale(0.15);
+}
+
+.cloudTwo {
+	-webkit-animation: animateCloud 20s linear infinite;
+	animation: animateCloud 20s linear infinite;
+	
+	-webkit-transform: scale(0.25);
+	transform: scale(0.25);
+}
+
+.cloudThree {
+	-webkit-animation: animateCloud 30s linear infinite;
+	animation: animateCloud 30s linear infinite;
+	
+	-webkit-transform: scale(0.4);
+	transform: scale(0.4);
+}
+
+/* OBJECTS */
+
+.cloud {
+	background: #fff;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(5%,#fff), color-stop(100%,#f1f1f1));
+	background: -webkit-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	background: -o-linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	background: linear-gradient(top,  #fff 5%,#f1f1f1 100%);
+	// filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#f1f1f1',GradientType=0 );
+	
+	-webkit-border-radius: 5rem;
+	border-radius: 5rem;
+	
+	-webkit-box-shadow: 0 0.5rem 0.3rem rgba(0, 0, 0, 0.1);
+	box-shadow: 0 0.5rem 0.3rem rgba(0, 0, 0, 0.1);
+
+	height: 9rem;
+	position: relative;
+	width: 19rem;
+}
+
+.cloud:after, .cloud:before {
+    background: #fff;
+	content: '';
+	position: absolute;
+	z-indeX: -1;
+}
+
+.cloud:after {
+	-webkit-border-radius: 5rem;
+	border-radius: 5rem;
+
+	height: 6rem;
+	left: 3rem;
+	top: -3rem;
+	width: 6rem;
+}
+
+.cloud:before {
+	-webkit-border-radius: 10rem;
+	border-radius: 10rem;
+
+	width: 9rem;
+	height: 9rem;
+	right: 3rem;
+	top: -4.5rem;
 }
