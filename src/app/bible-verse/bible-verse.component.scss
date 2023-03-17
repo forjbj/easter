@@ -1,6 +1,7 @@
 
 //::ng-deep necessary to work with wasm innerHTML
 #bibleWidget {
+    z-index: 7;
     margin: 0;
     position: sticky;
     bottom: 0;
