@@ -3,7 +3,8 @@
     position: sticky;
     top: 0;
     min-height: calc(100vh - 1.6rem);//min-height necessary for pics - that took hours
-    width: 100vw;
+    min-height: calc(100dvh - 1.6rem);//using dynamic viewport height for browsers that support it
+    width: 100%;
     background-image: url("../../assets/backgrounds/countdown.png");
     background-size: cover;
     background-position: center center;
@@ -28,8 +29,9 @@ h1, h2, h3, h4, h5 {
 .cloudLayer {
     position: absolute;
     top: 0;
-    width: 100vw;
-    height: 50vh;
+    width: 100%;
+    overflow: hidden;
+    // height: 50vh;
     z-index: -1;
 }
 
