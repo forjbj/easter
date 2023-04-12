@@ -1,8 +1,8 @@
-# EasterCountdown
+# EasterTimer
 
 Basic Easter Countdown application for the wife.
 
-Uses the Angular framework and Rust (webassembly) for scripture verses and calculating Easter Sunday each year.
+Uses the Angular framework and Rust (webassembly) for scripture verses and calculating Resurrection Sunday each year.
 
 Only works until 2098, after which the math changes and I won't be here to fix it.
 

@@ -1,9 +1,8 @@
 
-//::ng-deep necessary to work with wasm innerHTML
 #bibleWidget {
     z-index: 7;
     margin: 0;
-    position: sticky;
+    position: absolute;
     bottom: 0;
     background-color: #000000;
     text-align: left;
@@ -24,6 +23,11 @@
     font-weight: bold;
     padding-left: 1em;
     white-space: nowrap;
+    margin: 0;
+}
+.scriptButton {
+    border-color: transparent;
+    background-color: transparent;
 }
 .openSymbol {
     justify-self: center;
@@ -33,6 +37,7 @@
     background-image: url(../../assets/collapsed.png);
     background-position: center center;
     background-size: contain;
+    background-repeat: no-repeat;
     opacity: 0.8;
     cursor: pointer;
     transition: opacity 0.5s ease-in-out;
@@ -49,6 +54,7 @@
     background-image: url(../../assets/collapsed.png);
     background-position: center center;
     background-size: contain;
+    background-repeat: no-repeat;
     opacity: 0.8;
     rotate: 180deg;
     cursor: pointer;
@@ -101,6 +107,7 @@
     overflow-y: scroll;
     transition: opacity 0.5s ease-in-out;
 }
+//::ng-deep necessary to work with wasm innerHTML
 //  increase font size for readablility (I'm old)
 ::ng-deep .fontType {
     font-family: Georgia,"Times New Roman", Times, serif;

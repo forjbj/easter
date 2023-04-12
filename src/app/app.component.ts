@@ -23,22 +23,24 @@ export class AppComponent {
 
     this.time.easterSunday = wasm.easter_sunday(this.time.timeNow.getFullYear()); // this is in american format MM//DD/YYYY as javascript doesn't work without it
 
+    // not stellar; but only way to do this at the moment as Rust/Wasm doesn't do time.
     this.time.easter = new Date (this.time.easterSunday).getTime();
     if (this.time.timeNow.getTime() > (this.time.easter + 86400000)){ //add 24 hours (in milliseconds) to bring to easter monday
       this.time.easterSunday = wasm.easter_sunday(this.time.timeNow.getFullYear() + 1);
       this.time.easter = new Date (this.time.easterSunday).getTime();
     }
 
-    //set date for countdown page
-    this.time.easterDateFormat();
-    
-
-    this.time.timeDifference()
 
     this.time.timeNumber = this.time.timeNow.getTime();
     this.goodFriday =  this.time.easter - (2 * 86400000);// as milliseconds remove 2 days worth of milliseconds; 
     this.heartOfTheEarth = this. time.easter - 86400000;
     this.easterOver = this.time.easter + 86400000;
+
+    //set date for countdown page
+    this.time.easterDateFormat();
+    //set countdown timer to initial values before navigating to page
+    this.time.timeDifference();
+    
 
     if (this.time.timeNumber > this.goodFriday && this.time.timeNumber < this.heartOfTheEarth) {
       if ((this.goodFriday + 43200000) < this.time.timeNumber && (this.goodFriday + 54000000) > this.time.timeNumber){
@@ -62,8 +64,6 @@ export class AppComponent {
     } else {
       this.time.scriptureCode = 0; //random scripture code for WASM function
       this.router.navigate(["easterCountdown"]);
-      // this.time.scriptureCode = 0; //testing scripture code for WASM function
-      // this.router.navigate(["easterSaturday"]); //for testing
     }
   }
 }

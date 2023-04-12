@@ -26,11 +26,13 @@ export class BibleVerseComponent {
              public elementRef:ElementRef,
              public time: TimeService) {
 
-  this.load()
 
   }
 
   ngAfterViewInit(){
+
+    this.load()
+
     //add swipe action to display bible verse
     this.pointerEvents()
 
@@ -38,7 +40,7 @@ export class BibleVerseComponent {
 
   load() {
     this.threadWASM();
-    setTimeout(() => { //setTimeOut 0.5secs; necessary as bibleInfo not populated on start ??? not sure why; reload produces last book info without this
+    setTimeout(() => { //setTimeOut 0.3secs; necessary as bibleInfo not populated on start ??? not sure why; reload produces last book info without this
       this.bibleInfo()
     }, 300)  }
 

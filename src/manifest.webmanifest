@@ -1,6 +1,6 @@
 {
-  "name": "Easter Countdown",
-  "short_name": "Easter Countdown",
+  "name": "Easter Timer",
+  "short_name": "Easter Timer",
   "theme_color": "#32563b",
   "background_color": "#32563b",
   "display": "standalone",

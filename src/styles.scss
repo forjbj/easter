@@ -7,6 +7,6 @@ body, html{
     color: white;
     -webkit-tap-highlight-color: transparent; //need for chrome
     *:focus {
-    outline: none; //needed for chrome
+    outline-color: transparent; //needed for chrome
 }
 }

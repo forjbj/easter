@@ -1,18 +1,19 @@
-<div id="bibleWidget" >
-    <div id="swipe" class="bibleHeader">
-        <div class="leftTitle">
+<article id="bibleWidget" >
+    <section id="swipe" class="bibleHeader">
+        <p class="leftTitle">
             {{bookName}} {{chapter}}
-        </div>
-        <div 
+        </p>
+        <button aria-label="show/hide scripture"
             (click)="time.collapsed = !time.collapsed" 
-            [ngClass]="time.collapsed == true ? 'openSymbol' : 'closeSymbol'">
-        </div>
-        <div *ngIf="time.scriptureCode == 0; " 
+            [ngClass]="time.collapsed == true ? 'openSymbol' : 'closeSymbol'"
+            class="scriptButton">
+        </button>
+        <button  aria-label="reload random scripture" *ngIf="time.scriptureCode == 0; " 
             (click) = "load()" 
-            class="refresh" >
-        </div>
-    </div>
-        <div [ngClass]="time.collapsed == true ? 'bibleHide' : 'bibleShow'" 
-            [innerHTML] ="result | safe: 'html'">
-        </div>
-</div>
+            class="refresh scriptButton" >
+        </button>
+    </section>
+    <section [ngClass]="time.collapsed == true ? 'bibleHide' : 'bibleShow'" 
+        [innerHTML] ="result | safe: 'html'">
+    </section>
+</article>

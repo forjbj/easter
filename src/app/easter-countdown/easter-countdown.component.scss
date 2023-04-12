@@ -2,8 +2,8 @@
     color: black;
     position: sticky;
     top: 0;
-    min-height: calc(100vh - 1.6rem);//min-height necessary for pics - that took hours
-    min-height: calc(100dvh - 1.6rem);//using dynamic viewport height for browsers that support it
+    min-height: 100vh;//min-height necessary for pics - that took hours
+    min-height: 100dvh;//using dynamic viewport height for browsers that support it
     width: 100%;
     background-image: url("../../assets/backgrounds/countdown.png");
     background-size: cover;
