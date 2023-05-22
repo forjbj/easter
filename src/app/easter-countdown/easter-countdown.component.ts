@@ -39,10 +39,6 @@ export class EasterCountdownComponent {
     this.elCloudOne.style.animationDelay = this.cloudOneDelay;
     this.elCloudTwo.style.animationDelay = this.cloudTwoDelay;
     this.elCloudThree.style.animationDelay = this.cloudThreeDelay;
-    console.log(this.cloudThreeDelay)
-    // console.log(this.sunX, this.sunY)
-
-
 
     setInterval(()=>{this.time.timeDifference();
       // console.log(this.time.seconds)

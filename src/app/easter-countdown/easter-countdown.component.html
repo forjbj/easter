@@ -1,29 +1,46 @@
 <section class="countdownPage"> 
     <div id="sun"></div>
-
     <div class="cloudLayer" >
         <div id="cloudOne">
             <div class="cloud"></div>
         </div>
-
         <div id="cloudTwo">
-            <div class="cloud"></div>
+            <div class="cloudTwo"></div>
         </div>
-
+    </div>
+    <div class="mountains">
+        <svg height="20dvh" viewBox="0 0 120 50" preserveAspectRatio="height">
+            <path  fill="#818B99" stroke="#404546" stroke-width="1"
+            d="M0,50 
+            q20,-40 30,0 
+            q25,-60 42,0 
+            q22,-50 38,0 
+            Z" ></path>
+        </svg>
+    </div>
+    <div class="cloudThreeLayer">
         <div id="cloudThree">
             <div class="cloud"></div>
         </div>
     </div>
-
-
-    <br>
-    <br>
-    <h1>{{time.days}} Day<span *ngIf="time.days != 1" >s</span></h1>
-    <h2>{{time.hours}} Hour<span *ngIf="time.hours != 1" >s</span></h2>
-    <h3>{{time.minutes}} Minute<span *ngIf="time.minutes != 1" >s</span></h3>
-    <h4 class="reduceMargin">and</h4>
-    <h4>{{time.seconds}} Second<span *ngIf="time.seconds != 1" >s</span></h4>
-    <h3 class="reduceMargin">until</h3>
-    <h2>RESURRECTION SUNDAY</h2>
-    <h3>{{time.easterDate}}</h3>
+    <div class="mountains">
+        <svg  height="20dvh" viewBox="0 0 120 50" preserveAspectRatio="height">
+            <path fill="#30ba8f" stroke="#156548" stroke-width="1"
+            d="M7,50 
+            q15,-25 25,-10 
+            q20,-25 42,5 
+            q22,-20 38,5 
+            Z"></path>
+        </svg>
+    </div>
+    <div class="info">
+        <h1>{{time.days}} Day<span *ngIf="time.days != 1" >s</span></h1>
+        <h2>{{time.hours}} Hour<span *ngIf="time.hours != 1" >s</span></h2>
+        <h3>{{time.minutes}} Minute<span *ngIf="time.minutes != 1" >s</span></h3>
+        <h4 class="reduceMargin">and</h4>
+        <h4>{{time.seconds}} Second<span *ngIf="time.seconds != 1" >s</span></h4>
+        <h3 class="reduceMargin">until</h3>
+        <h2>RESURRECTION SUNDAY</h2>
+        <h3>{{time.easterDate}}</h3>
+    </div>
 </section>

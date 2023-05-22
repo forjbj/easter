@@ -1,19 +1,22 @@
 .countdownPage {
-    color: black;
-    position: sticky;
-    top: 0;
-    min-height: 100vh;//min-height necessary for pics - that took hours
-    min-height: 100dvh;//using dynamic viewport height for browsers that support it
-    width: 100%;
-    background-image: url("../../assets/backgrounds/countdown.png");
+    min-height: 100dvh;
+    height:fit-content;
+    width: 100dvw;
+    overflow-x: hidden;
+    background-image: linear-gradient(skyblue 70%, darkgreen 30%, green );
     background-size: cover;
-    background-position: center center;
+    position: relative;
+}
+.info {
+    position: relative;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    padding: 2rem 0;
 }
 #sun {
-    z-index: -3;
     position: absolute;
-    // top: 50%; //randomly generated see .ts file
-    // left: 15%; //randomly generated see .ts fileS
     width: 3rem;
     height: 3rem;
     border-radius: 1.5rem;
@@ -21,20 +24,15 @@
     box-shadow: 0 0 2rem 1rem rgba($color: yellow, $alpha: 0.7);
 }
 h1, h2, h3, h4, h5 {
-    z-index: 3;
+    text-align: center;
+    color: black;
     text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white;
 }
-
-
 .cloudLayer {
     position: absolute;
-    top: 0;
     width: 100%;
-    overflow: hidden;
-    // height: 50vh;
-    z-index: -1;
+    overflow-x: hidden;
 }
-
 @keyframes animateCloud {
     0% {
         margin-left: -110%;
@@ -51,23 +49,36 @@ h1, h2, h3, h4, h5 {
     animation-duration: 50s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-	transform: scale(0.13);
+	transform: scale(0.12);
 }
-
 #cloudTwo {
     animation-name: animateCloud;
     animation-duration: 25s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    transform: scale(0.24);
+    transform: scale(0.22);
+    @media (orientation: landscape) {
+        transform: scale(0.17);
+    }
 }
-
+.cloudThreeLayer {
+    position: absolute;
+    bottom: 30%;
+    width: 100%;
+    overflow-x: hidden;
+    @media (orientation: landscape) {
+        bottom: 25%;
+    }
+}
 #cloudThree {
     animation-name: animateCloud;
     animation-duration: 40s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
-    transform: scale(0.33);
+    transform: scale(0.3);
+    @media (orientation: landscape) {
+        transform: scale(0.15);
+    }
 }
 
 // cloud objects
@@ -81,14 +92,11 @@ h1, h2, h3, h4, h5 {
 	position: relative;
 	width: 19rem;
 }
-
 .cloud:after, .cloud:before {
     background: #fff;
 	content: '';
 	position: absolute;
-	z-index: -1;
 }
-
 .cloud:after {
 	border-radius: 5rem;
 	height: 6rem;
@@ -96,7 +104,6 @@ h1, h2, h3, h4, h5 {
 	top: -3rem;
 	width: 6rem;
 }
-
 .cloud:before {
 	border-radius: 10rem;
 	width: 9rem;
@@ -104,3 +111,39 @@ h1, h2, h3, h4, h5 {
 	right: 3rem;
 	top: -4.5rem;
 }
+.cloudTwo {
+	background: #fff;
+	background: linear-gradient(to bottom,  #fff ,#f1f1f1);
+	border-radius: 5rem;
+	box-shadow: 0 0.5rem 0.3rem rgba(0, 0, 0, 0.1);
+	height: 9rem;
+	position: relative;
+	width: 19rem;
+}
+.cloudTwo:after, .cloudTwo:before {
+    background: #fff;
+	content: '';
+	position: absolute;
+}
+.cloudTwo:after {
+	border-radius: 10rem;
+	width: 9rem;
+	height: 9rem;
+	left: 3rem;
+	top: -4.5rem;
+}
+.cloudTwo:before {
+	border-radius: 5rem;
+	width: 6rem;
+	height: 6rem;
+	right: 3rem;
+	top: -3rem;
+}
+.mountains {
+    position: absolute;
+    width: 100dvw;
+    height: 20dvh; //don't touch - works
+    left: 0;
+    bottom: 30%;
+    overflow: hidden;
+} 
