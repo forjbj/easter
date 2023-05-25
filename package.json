@@ -29,7 +29,7 @@
     "@angular/compiler-cli": "^16.0.3",
     "@types/jasmine": "~4.3.0",
     "angular-cli-ghpages": "^1.0.6",
-    "jasmine-core": "~5.0.0",
+    "jasmine-core": "~4.0.0",
     "karma": "~6.4.2",
     "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
