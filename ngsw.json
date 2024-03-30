@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1711416017040,
+  "timestamp": 1711770117896,
   "index": "./index.html",
   "assetGroups": [
     {
@@ -14,11 +14,11 @@
         "./549.f41189a9806f5261.js",
         "./favicon.ico",
         "./index.html",
-        "./main.c63be317b4f5547d.js",
+        "./main.da65bdc68300bde2.js",
         "./manifest.webmanifest",
         "./polyfills.ed3a13447b3d4c54.js",
         "./runtime.8dbe39ab489486a4.js",
-        "./styles.58a31bf2f37b3c9a.css"
+        "./styles.dc8a64bb73ccc061.css"
       ],
       "patterns": []
     },
@@ -30,12 +30,18 @@
         "ignoreVary": true
       },
       "urls": [
-        "./Background_Cross.9397167f6fd2ec81.png",
-        "./Background_Easter.209a812f0fbcf92d.png",
-        "./Background_Easter_Saturday.763b160ab8a1c91d.png",
+        "./Background_Cross.5fd2847e6aa78069.jpg",
+        "./Background_Easter.3fe5d7e668b031ff.jpg",
+        "./Background_Easter_Saturday.f0d1005a61bd45f0.jpg",
+        "./Background_Good_Friday_evening.fc398a73d7d223e7.jpg",
+        "./assets/backgrounds/Background_Cross.jpg",
         "./assets/backgrounds/Background_Cross.png",
+        "./assets/backgrounds/Background_Easter.jpg",
         "./assets/backgrounds/Background_Easter.png",
+        "./assets/backgrounds/Background_Easter_Saturday.jpg",
         "./assets/backgrounds/Background_Easter_Saturday.png",
+        "./assets/backgrounds/Background_Good_Friday_evening.jpg",
+        "./assets/backgrounds/Background_Good_Friday_evening.png",
         "./assets/backgrounds/countdown.png",
         "./assets/bible/Bible.json",
         "./assets/collapsed.png",
@@ -58,12 +64,18 @@
   "dataGroups": [],
   "hashTable": {
     "./549.f41189a9806f5261.js": "4a1f56cf77b7b369b6085790785f90edd41a93c1",
-    "./Background_Cross.9397167f6fd2ec81.png": "05b0653cf6c40c7c948022eac6a8d9e3e0cf3903",
-    "./Background_Easter.209a812f0fbcf92d.png": "368f747c9d69a95e2394176a47130c83dee15e9c",
-    "./Background_Easter_Saturday.763b160ab8a1c91d.png": "d129600aa8d6b2c0920c533f768c05d342ff3e33",
+    "./Background_Cross.5fd2847e6aa78069.jpg": "6971830959cc1b93c49724d3f679641eb75ead29",
+    "./Background_Easter.3fe5d7e668b031ff.jpg": "208de0f8a439d4c4d7993413a994e1d8eef3660d",
+    "./Background_Easter_Saturday.f0d1005a61bd45f0.jpg": "033da94ea0da53b875c035679f7a2c91f0a3dacd",
+    "./Background_Good_Friday_evening.fc398a73d7d223e7.jpg": "a71115553cbb22757d0b7504e0cece76a8faad0f",
+    "./assets/backgrounds/Background_Cross.jpg": "6971830959cc1b93c49724d3f679641eb75ead29",
     "./assets/backgrounds/Background_Cross.png": "05b0653cf6c40c7c948022eac6a8d9e3e0cf3903",
+    "./assets/backgrounds/Background_Easter.jpg": "208de0f8a439d4c4d7993413a994e1d8eef3660d",
     "./assets/backgrounds/Background_Easter.png": "368f747c9d69a95e2394176a47130c83dee15e9c",
-    "./assets/backgrounds/Background_Easter_Saturday.png": "d129600aa8d6b2c0920c533f768c05d342ff3e33",
+    "./assets/backgrounds/Background_Easter_Saturday.jpg": "033da94ea0da53b875c035679f7a2c91f0a3dacd",
+    "./assets/backgrounds/Background_Easter_Saturday.png": "383bfb9cf78cc72b7b5a378c6932a57c58360477",
+    "./assets/backgrounds/Background_Good_Friday_evening.jpg": "a71115553cbb22757d0b7504e0cece76a8faad0f",
+    "./assets/backgrounds/Background_Good_Friday_evening.png": "d129600aa8d6b2c0920c533f768c05d342ff3e33",
     "./assets/backgrounds/countdown.png": "847ad4d93bbac4ac93ff2bfacee4d41552a3eca3",
     "./assets/bible/Bible.json": "2efdfc9890c2846eb518c3c5eeb64e1c0277b0fc",
     "./assets/collapsed.png": "62af0d8925536be6fa87421ae9fb9d8b7252e803",
@@ -79,13 +91,13 @@
     "./assets/refresh.png": "a056eaaffa099af1230a1ff8bb788471ee257800",
     "./collapsed.23416c70b32c08e6.png": "62af0d8925536be6fa87421ae9fb9d8b7252e803",
     "./favicon.ico": "02e518049dd7ff0673ac3720562bca5605485686",
-    "./index.html": "a06ea79d505f9071e92296e0fc9d98f562e163ec",
-    "./main.c63be317b4f5547d.js": "37b1de0b8a0eaddb7b882b4a51a7b4b2937f4b9f",
+    "./index.html": "0779a9b2af45526a34d72a402081c2a557a31a3a",
+    "./main.da65bdc68300bde2.js": "d036905c09af035b6476e05d0fe5113064a03415",
     "./manifest.webmanifest": "40b351f4544f8a3e3d22bc98dc1417706910fa28",
     "./polyfills.ed3a13447b3d4c54.js": "0f061310f3424c3f69f536e913c0eaddbf549fde",
     "./refresh.592a0ab9dc09df93.png": "a056eaaffa099af1230a1ff8bb788471ee257800",
     "./runtime.8dbe39ab489486a4.js": "7d9176ca52d4638455a53d99ff7cb4c011819829",
-    "./styles.58a31bf2f37b3c9a.css": "f0758df4c7678fa4d6d74da45d9a0635e5b5a862"
+    "./styles.dc8a64bb73ccc061.css": "978c92b4deae03b26f623ec60ab6a37e11d886ad"
   },
   "navigationUrls": [
     {
