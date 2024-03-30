@@ -4,7 +4,7 @@
     min-height: 100vh;//min-height necessary for pics - that took hours
     min-height: 100dvh;//using dynamic viewport height for browsers that support it
     width: 100%;
-    background-image: url("../../assets/backgrounds/Background_Cross.png");
+    background-image: url("../../assets/backgrounds/Background_Cross.jpg");
     background-size: cover;
     background-position: center center;
 }
@@ -21,13 +21,14 @@
     min-height: 100vh;//min-height necessary for pics - that took hours
     min-height: 100dvh;//using dynamic viewport height for browsers that support it
     width: 100%;
-    background-image: url("../../assets/backgrounds/Background_Easter_Saturday.png");
+    background-image: url("../../assets/backgrounds/Background_Good_Friday_evening.jpg");
     background-size: cover;
     background-position: center center;
 }
 .closeColour {
     max-width: 17rem;
     margin: 0 auto;
+    font-size: 3rem;
     color: red;
     text-shadow: 0 0 1px #32563b, 0 0 1px #32563b, 0 0 1px black, 0 0 1px black;
 }

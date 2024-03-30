@@ -23,7 +23,6 @@ export class GoodFridayComponent {
     //Countdown timer
     setInterval(()=>{this.time.timeDifference();
       // console.log(this.time.seconds)
-    }, 1000)
+    }, 1000);
   }
-
 }

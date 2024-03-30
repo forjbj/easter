@@ -4,14 +4,14 @@
     min-height: 100vh;//min-height necessary for pics - that took hours
     min-height: 100dvh;//using dynamic viewport height for browsers that support it
     width: 100%;
-    background-image: url("../../assets/backgrounds/Background_Easter.png");
+    background-image: url("../../assets/backgrounds/Background_Easter.jpg");
     background-size: cover;
     background-position: center center;
 }
 .easterColour {
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     font-size: 3rem;
-    margin: 0;
+    margin: 0 1rem;
     color: #32563b;
     text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white;
 }

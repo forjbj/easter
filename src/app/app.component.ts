@@ -40,8 +40,10 @@ export class AppComponent {
     this.time.easterDateFormat();
     //set countdown timer to initial values before navigating to page
     this.time.timeDifference();
-    
+    this.load();
+  }
 
+  load() {
     if (this.time.timeNumber > this.goodFriday && this.time.timeNumber < this.heartOfTheEarth) {
       if ((this.goodFriday + 43200000) < this.time.timeNumber && (this.goodFriday + 54000000) > this.time.timeNumber){
         this.time.goodFridayDarkness = true;

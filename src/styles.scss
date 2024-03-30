@@ -2,9 +2,11 @@
 body, html{
     position: relative; //needed to keep bible widget on bottom
     // min-height: 100vh;
-    margin: 0;
+    max-width: 700px;
+    margin: 0 auto;
     text-align: center;
     color: white;
+    background-color: black;
     -webkit-tap-highlight-color: transparent; //need for chrome
     *:focus {
     outline-color: transparent; //needed for chrome

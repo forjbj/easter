@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 export class TimeService {
 
   public timeNow = new Date;
-  // public timeNow = new Date("3/29/2024 10:59:00"); //for testing and change in timeDifference function below
+  // public timeNow = new Date("4/19/2025 15:59:00"); //for testing and change in timeDifference function below
 
   public timeNumber: any;
   public easterSunday: any;
@@ -25,7 +25,7 @@ export class TimeService {
 
   //variables for scripture
   public scriptureCode = 0; //default for random scripture; 1 = Matthew 27; 2 = Luke 24
-  public collapsed: boolean = true;
+  public collapsed: boolean = false;
 
   public timeDifference(){
 

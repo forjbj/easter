@@ -4,12 +4,13 @@
     min-height: 100vh;//min-height necessary for pics - that took hours
     min-height: 100dvh;//using dynamic viewport height for browsers that support it
     width: 100%;
-    background-image: url("../../assets/backgrounds/Background_Easter_Saturday.png");
+    background-image: url("../../assets/backgrounds/Background_Easter_Saturday.jpg");
     background-size: cover;
     background-position: center center;
 }
 .saturdayColour {
-    color: #777;
+    color: #333;
+    font-size: 2rem;
     text-shadow: 0 0 1px white, 0 0 1px white, 0 0 1px white, 0 0 1px white;
     margin-top: 0;
     padding-top: 0.5rem;
