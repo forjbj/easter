@@ -8,6 +8,10 @@
     text-align: left;
     transition: opacity 0.5s ease-in-out;
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
+
+    @media (orientation: landscape){
+        background-color: rgba($color: black, $alpha: 0.8);
+    }
 }
 .bibleHeader {
     touch-action: none;
@@ -16,8 +20,8 @@
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     justify-items: center;
-    margin: 0 0.3rem;
-    border: 1px solid rgba($color: white, $alpha: 0.3);
+    border-top: 1px solid rgba($color: white, $alpha: 0.3);
+    border-bottom: 1px solid rgba($color: white, $alpha: 0.3);
     background-color: transparent;
 }
 .leftTitle {
