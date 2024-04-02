@@ -4,25 +4,25 @@
     margin: 0;
     position: absolute;
     bottom: 0;
-    background-color: rgba($color: black, $alpha: 0.3);
     text-align: left;
     transition: opacity 0.5s ease-in-out;
     text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
-
-    @media (orientation: landscape){
-        background-color: rgba($color: black, $alpha: 0.8);
-    }
 }
 .bibleHeader {
     touch-action: none;
-    // text-shadow: 0 0 1px black, 0 0 1px black, 0 0 1px black, 0 0 1px black;
     display: grid;
     grid-template-columns: 1fr auto 1fr;
     align-items: center;
     justify-items: center;
-    border-top: 1px solid rgba($color: white, $alpha: 0.3);
-    border-bottom: 1px solid rgba($color: white, $alpha: 0.3);
-    background-color: transparent;
+    margin-top: 1rem;
+    border-top: 1px solid rgba($color: white, $alpha: 0.5);
+    border-bottom: 1px solid rgba($color: white, $alpha: 0.5);
+    background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.3));
+
+    @media (orientation: landscape){
+        background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.8));
+    }
+
 }
 .leftTitle {
     justify-self: left;
@@ -47,8 +47,8 @@
     background-repeat: no-repeat;
     opacity: 0.8;
     cursor: pointer;
-    transition: opacity 0.5s ease-in-out;
-    transition: rotate 0.2s ease-in-out;
+    transition: 0.3s;
+    // transition: rotate 0.2s ease-in-out;
     &:hover {
         opacity: 1;
     }
@@ -65,8 +65,7 @@
     opacity: 0.8;
     rotate: 180deg;
     cursor: pointer;
-    transition: opacity 0.5s ease-in-out;
-    transition: rotate 0.2s ease-in-out;
+    transition: 0.3s;
     &:hover {
         opacity: 1;
     }
@@ -84,8 +83,7 @@
     background-repeat: no-repeat;
     opacity: 0.8;
     cursor: pointer;
-    transition: opacity 0.5s ease-in-out;
-    transition: width 0.5s ease-in-out;
+    transition: 0.5s;
     &:hover {
         opacity: 1;
     }
@@ -102,7 +100,6 @@
     } 
 }
 .bibleHide  {
-    // display: none;
     opacity: 0;
     height: 0;
     transition: opacity 0.5s ease-in-out;
@@ -112,8 +109,13 @@
 .bibleShow {
     opacity: 1;
     height: 10rem;
+    background-color: rgba($color: black, $alpha: 0.3);
     overflow-y: scroll;
     transition: height 0.5s ease-in-out, opacity 0.3s ease-in-out;
+    
+    @media (orientation: landscape){
+        background-color: rgba($color: black, $alpha: 0.8);
+    }
 }
 //::ng-deep necessary to work with wasm innerHTML
 //  increase font size for readablility (I'm old)

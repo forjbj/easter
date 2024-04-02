@@ -19,6 +19,8 @@ export class BibleVerseComponent {
   public testament?: number;
   public bookName?: any;
 
+  public orientation?: any;
+
   public bible: any = bibleJson;
     
   constructor( public title: Title,
@@ -36,6 +38,20 @@ export class BibleVerseComponent {
     //add swipe action to display bible verse
     this.pointerEvents()
 
+    // Collapse Bible on landscape orientaion
+    this.orientation = window.matchMedia("(orientation: landscape)")
+    this.collapseLandscape(this.orientation);
+    this.orientation.addEventListener("change", ()=> {
+      this.collapseLandscape(this.orientation);
+    })
+  }
+  collapseLandscape(orientation: any) {
+    if (orientation.matches) {
+      this.time.collapsed = true;
+    }
+    else {
+      this.time.collapsed = false;
+    }
   }
 
   load() {
