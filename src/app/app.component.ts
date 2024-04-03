@@ -21,6 +21,20 @@ export class AppComponent {
   constructor(public time: TimeService,
               private router: Router){
 
+
+    this.load();   
+
+  }
+
+  ngAfterViewInit(){
+    setInterval(()=>{
+      this.load();
+      // check every half hour (3600000 milliseconds in a hour)
+    }, 1800000)
+  }
+
+  load() {
+
     this.time.easterSunday = wasm.easter_sunday(this.time.timeNow.getFullYear()); // this is in american format MM//DD/YYYY as javascript doesn't work without it
 
     // not stellar; but only way to do this at the moment as Rust/Wasm doesn't do time.
@@ -40,18 +54,7 @@ export class AppComponent {
     this.time.easterDateFormat();
     //set countdown timer to initial values before navigating to page
     this.time.timeDifference();
-    this.load();
-  }
 
-  ngAfterViewInit(){
-    setInterval(()=>{
-      this.load();
-      // console.log(this.time)
-      // check every hour (3600000 milliseconds in a hour)
-    }, 3600000)
-  }
-
-  load() {
     if (this.time.timeNumber > this.goodFriday && this.time.timeNumber < this.heartOfTheEarth) {
       if ((this.goodFriday + 43200000) < this.time.timeNumber && (this.goodFriday + 54000000) > this.time.timeNumber){
         this.time.goodFridayDarkness = true;
