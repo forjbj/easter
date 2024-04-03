@@ -6,7 +6,17 @@ import { Injectable } from '@angular/core';
 export class TimeService {
 
   public timeNow = new Date;
-  // public timeNow = new Date("4/18/2025 11:59:00"); //for testing and change in timeDifference function below
+  // public timeNow = new Date("4/20/2025 15:59:00"); //for testing and change in timeDifference function below
+  // this.timeNow = addTime();
+  
+  // public addTime() {
+  // setInterval(()=>{
+  //   let i = 0;
+  //   this.timeNow = new Date("4/18/2025 " + i + ":30:00")
+  //   console.log(i);
+  //   i++;
+  // }, 10000)};
+
 
   public timeNumber: any;
   public easterSunday: any;
@@ -28,7 +38,7 @@ export class TimeService {
   public collapsed: boolean = false;
 
   public timeDifference(){
-
+    
     let time = new Date;
     // let time = this.timeNow; //for testing see timeNow variable above
 

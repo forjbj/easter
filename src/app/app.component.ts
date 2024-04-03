@@ -43,6 +43,14 @@ export class AppComponent {
     this.load();
   }
 
+  ngAfterViewInit(){
+    setInterval(()=>{
+      this.load();
+      // console.log(this.time)
+      // check every hour (3600000 milliseconds in a hour)
+    }, 3600000)
+  }
+
   load() {
     if (this.time.timeNumber > this.goodFriday && this.time.timeNumber < this.heartOfTheEarth) {
       if ((this.goodFriday + 43200000) < this.time.timeNumber && (this.goodFriday + 54000000) > this.time.timeNumber){
