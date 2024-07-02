@@ -13,7 +13,7 @@ import { TimeService } from '../time.service';
 export class BibleVerseComponent {
   public result?: string = ""; //empty string necessary or 'undefined' shows up briefly on screen
   public chapter?: number;
-  public verse?: number;
+  public verse: number = 1;
   public observer?: IntersectionObserver;
   public bookSelected?: number;
   public testament?: number;
@@ -22,6 +22,8 @@ export class BibleVerseComponent {
   public orientation?: any;
 
   public bible: any = bibleJson;
+
+  public dialog: any;
     
   constructor( public title: Title,
              public meta: Meta,
@@ -32,6 +34,8 @@ export class BibleVerseComponent {
   }
 
   ngAfterViewInit(){
+
+    this.dialog = document.querySelector("dialog")
 
     this.load()
 
@@ -56,9 +60,12 @@ export class BibleVerseComponent {
 
   load() {
     this.threadWASM();
+    // this.bibleInfo();
     setTimeout(() => { //setTimeOut 0.3secs; necessary as bibleInfo not populated on start ??? not sure why; reload produces last book info without this
       this.bibleInfo()
-    }, 300)  }
+    }, 400)  
+    this.scrollToVer();
+  }
 
   threadWASM() {
     if (typeof Worker !== 'undefined') {
@@ -79,11 +86,11 @@ export class BibleVerseComponent {
     if (this.elementRef?.nativeElement.querySelector(".head")) { //necessary or error for null values below on inital load
       const name: any = this.elementRef?.nativeElement.querySelector(".head");
       const splits = name.id.toString().split('-');
+      const ver = document?.getElementsByClassName("ver")
       this.testament = Number(splits[0]);
       this.bookSelected = Number(splits[1]);
       this.chapter = Number(splits[2]) + 1; // add 1 to get right chapter number
       this.bookName = this.bible[this.testament].books[this.bookSelected].bookName;
-      const ver = name?.getElementsByTagName("DIV");
       if (this.time.scriptureCode == 1){
         if (this.time.goodFridayMorning == true) {
           this.verse = 33
@@ -97,13 +104,17 @@ export class BibleVerseComponent {
       } else {
         this.verse = Math.floor(Math.random() * ver.length) + 1;
       }
-
-      ver[this.verse -1].scrollIntoView({
-                            behavior: 'auto',
-                            block: 'start',
-                            inline: 'center'
-                        });
+      this.scrollToVer();
     }
+  }
+  scrollToVer(){
+    const ver = document?.getElementsByClassName("ver")
+    ver[this.verse -1].scrollIntoView({
+      behavior: 'auto',
+      block: 'start',
+      inline: 'center'
+  });
+
   }
   pointerEvents (){
     const start = (e: any) => {
@@ -127,6 +138,17 @@ export class BibleVerseComponent {
     swipe?.addEventListener('pointerdown', start, false);
     startPoint = null;
     // console.log(swipe)
+  }
+  backdropClose(event: any){
+    let rect = event.target.getBoundingClientRect();
+    //only close if outside dialog box.
+    if (rect.left > event.clientX ||
+        rect.right < event.clientX ||
+        rect.top > event.clientY ||
+        rect.bottom < event.clientY
+    ) {
+        this.dialog.close();
+    }
   }
 }
 export function read_file() { // MUST be in here as lib.rs points here
