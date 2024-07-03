@@ -105,7 +105,11 @@
           }
         },
         "deploy": {
-          "builder": "angular-cli-ghpages:deploy"
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+              "baseHref": ".",
+              "repo": "https://github.com/forjbj/easter"
+          }
         }
       }
     }
