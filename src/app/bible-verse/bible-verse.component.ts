@@ -24,20 +24,19 @@ export class BibleVerseComponent {
   public bible: any = bibleJson;
 
   public dialog: any;
+
+  public opened: boolean = false;
     
   constructor( public title: Title,
              public meta: Meta,
              public elementRef:ElementRef,
              public time: TimeService) {
-
-
+              
   }
 
   ngAfterViewInit(){
 
     this.dialog = document.querySelector("dialog")
-
-    this.load()
 
     //add swipe action to display bible verse
     this.pointerEvents()
@@ -48,6 +47,9 @@ export class BibleVerseComponent {
     this.orientation.addEventListener("change", ()=> {
       this.collapseLandscape(this.orientation);
     })
+
+      this.load(); //has to be here not in the constructor; doesn't load bible info and scroll in constructor
+
   }
   collapseLandscape(orientation: any) {
     if (orientation.matches) {
@@ -58,16 +60,14 @@ export class BibleVerseComponent {
     }
   }
 
-  load() {
-    this.threadWASM();
-    // this.bibleInfo();
-    setTimeout(() => { //setTimeOut 0.3secs; necessary as bibleInfo not populated on start ??? not sure why; reload produces last book info without this
-      this.bibleInfo()
-    }, 400)  
-    this.scrollToVer();
+  async load() {
+    await this.threadWASM();
+    setTimeout(() => { //setTimeOut 0.4secs; necessary as bibleInfo not populated on start ??? not sure why; reload produces last book info without this
+      this.bibleInfo();
+    }, 400);
   }
 
-  threadWASM() {
+  async threadWASM() {
     if (typeof Worker !== 'undefined') {
       // Create a new
       const worker = new Worker(new URL('./bible-verse.worker', import.meta.url));
@@ -82,7 +82,7 @@ export class BibleVerseComponent {
     }
   }
 
-  bibleInfo() {
+  async bibleInfo() {
     if (this.elementRef?.nativeElement.querySelector(".head")) { //necessary or error for null values below on inital load
       const name: any = this.elementRef?.nativeElement.querySelector(".head");
       const splits = name.id.toString().split('-');
@@ -91,7 +91,9 @@ export class BibleVerseComponent {
       this.bookSelected = Number(splits[1]);
       this.chapter = Number(splits[2]) + 1; // add 1 to get right chapter number
       this.bookName = this.bible[this.testament].books[this.bookSelected].bookName;
-      if (this.time.scriptureCode == 1){
+      if (this.time.scriptureCode === 0) {
+        this.verse = Math.floor(Math.random() * ver.length) + 1;
+      } else if (this.time.scriptureCode == 1){
         if (this.time.goodFridayMorning == true) {
           this.verse = 33
         } else if (this.time.goodFridayDarkness == true){
@@ -101,35 +103,41 @@ export class BibleVerseComponent {
         }
       } else if (this.time.scriptureCode == 2) {
         this.verse = 6
-      } else {
-        this.verse = Math.floor(Math.random() * ver.length) + 1;
       }
-      this.scrollToVer();
+      if (this.opened == false) {
+        setTimeout(() => { 
+          this.scrollToVer();
+        },300)
+      }
     }
   }
   scrollToVer(){
     const ver = document?.getElementsByClassName("ver")
     ver[this.verse -1].scrollIntoView({
-      behavior: 'auto',
+      behavior: 'smooth',
       block: 'start',
       inline: 'center'
-  });
-
+    });
   }
+
+  openDialog(){
+    if(this.opened == false) {
+      setTimeout(()=> {
+        this.scrollToVer()
+      },100)
+    }
+  }
+
   pointerEvents (){
     const start = (e: any) => {
       startPoint = e.clientY;
-      // console.log(e)
     }
     const move = (e: any) => {
         if(e.clientY > startPoint){
         this.time.collapsed = true;
-        // console.log(e)
-        // console.log(startPoint)
       }
       if (e.clientY < startPoint){
         this.time.collapsed = false;
-        // console.log(startPoint)
       }
     }
     let startPoint: any;
@@ -137,7 +145,6 @@ export class BibleVerseComponent {
     swipe?.addEventListener('pointermove', move, false);
     swipe?.addEventListener('pointerdown', start, false);
     startPoint = null;
-    // console.log(swipe)
   }
   backdropClose(event: any){
     let rect = event.target.getBoundingClientRect();
@@ -148,6 +155,7 @@ export class BibleVerseComponent {
         rect.bottom < event.clientY
     ) {
         this.dialog.close();
+        this.opened = true;
     }
   }
 }

@@ -1,6 +1,6 @@
 <article id="bibleWidget" >
     <button 
-        (click)="dialog.showModal(); bibleInfo();"
+        (click)="dialog.showModal(); openDialog();"
         class="openButton">
          Read: {{bookName}}  {{chapter}}
     </button>
@@ -18,13 +18,13 @@
             </div>
             <button *ngIf="time.scriptureCode == 0;"
                 aria-label="reload a random scripture" 
-                (click) = "load()"
+                (click) = "opened = false; load();"
                 class="newScript">
                 New Scripture
             </button>
             <button 
                 aria-label="close the scripture dialog box"
-                (click)="dialog.close()"
+                (click)="dialog.close(); opened = true;"
                 class="closeScript">
                 Close Scripture
             </button>
