@@ -60,14 +60,14 @@ export class BibleVerseComponent {
     }
   }
 
-  async load() {
-    await this.threadWASM();
+  load() {
+    this.threadWASM();
     setTimeout(() => { //setTimeOut 0.4secs; necessary as bibleInfo not populated on start ??? not sure why; reload produces last book info without this
       this.bibleInfo();
     }, 400);
   }
 
-  async threadWASM() {
+  threadWASM() {
     if (typeof Worker !== 'undefined') {
       // Create a new
       const worker = new Worker(new URL('./bible-verse.worker', import.meta.url));
@@ -82,7 +82,7 @@ export class BibleVerseComponent {
     }
   }
 
-  async bibleInfo() {
+  bibleInfo() {
     if (this.elementRef?.nativeElement.querySelector(".head")) { //necessary or error for null values below on inital load
       const name: any = this.elementRef?.nativeElement.querySelector(".head");
       const splits = name.id.toString().split('-');
