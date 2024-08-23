@@ -81,7 +81,7 @@ dialog[open]{
         .bookAndChap {
             margin-left: 1rem;
             justify-self: left;
-            padding: 0.3rem;
+            padding: 0.5rem;
             color: #ddd;
         }
         .newScript {
@@ -94,14 +94,21 @@ dialog[open]{
             border: 2px solid #fff;
             color: white; //needed for ios or button font is blue
             padding: 0.3rem 0.7rem;
-            // background: radial-gradient(#fff, #eee, #eee, #ddd);
             background-color: transparent;
             transition-duration: 1s;
-            &:hover, &:active{
-                // background: radial-gradient(#fff, #fff, #fff, #ddd);
+            &:hover{
                 background-color: #eee;
-                color: black;
-                transform: translateY(-0.5rem);
+                color: black;           
+            }
+            &:active{
+                color: red;
+                transform: translateY(-0.3rem);
+            
+            }
+            @media (pointer: fine){
+                &:hover{
+                    transform: translateY(-0.3rem);
+                }
             }
         }
         .closeScript {
@@ -115,15 +122,21 @@ dialog[open]{
             border: 2px solid #a11;
             padding: 0.3rem 0.7rem;
             color: white;
-            // background: radial-gradient(#550101, #660101, #880101, #aa0101);
             background-color: transparent;
             transition-duration: 1s;
-            &:hover, &:active{
-                // background: radial-gradient(#660101, #770101, #990101, #bb0101);
+            &:hover {
                 background-color: #aa0101;
-                transform: translateY(-0.5rem);
             }
-
+            &:active{
+                color: red;
+                transform: translateY(-0.3rem);
+            
+            }
+            @media (pointer: fine){
+                &:hover{
+                    transform: translateY(-0.3rem);
+                }
+            }
         }
     }
 }
