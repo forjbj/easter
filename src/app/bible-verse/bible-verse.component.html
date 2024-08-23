@@ -2,7 +2,13 @@
     <button 
         (click)="dialog.showModal(); openDialog();"
         class="openButton">
-         Read: {{bookName}}  {{chapter}}
+         <span
+         *ngIf="open == false; else reading">
+            Read: {{bookName}}  {{chapter}}
+        </span>
+        <ng-template #reading>
+            Reading {{bookName}}  {{chapter}}
+        </ng-template>
     </button>
     <dialog 
         (click)="backdropClose($event)">
@@ -18,13 +24,13 @@
             </div>
             <button *ngIf="time.scriptureCode == 0;"
                 aria-label="reload a random scripture" 
-                (click) = "opened = false; load();"
+                (click) = " load();"
                 class="newScript">
                 New Scripture
             </button>
             <button 
                 aria-label="close the scripture dialog box"
-                (click)="dialog.close(); opened = true;"
+                (click)="dialog.close(); open = false;"
                 class="closeScript">
                 Close Scripture
             </button>

@@ -25,7 +25,7 @@ export class BibleVerseComponent {
 
   public dialog: any;
 
-  public opened: boolean = false;
+  public open: boolean = false;
     
   constructor( public title: Title,
              public meta: Meta,
@@ -104,11 +104,11 @@ export class BibleVerseComponent {
       } else if (this.time.scriptureCode == 2) {
         this.verse = 6
       }
-      if (this.opened == false) {
+      // if (this.opened == false) {
         setTimeout(() => { 
           this.scrollToVer();
         },300)
-      }
+      // }
     }
   }
   scrollToVer(){
@@ -121,11 +121,12 @@ export class BibleVerseComponent {
   }
 
   openDialog(){
-    if(this.opened == false) {
+    this.open = true;
+    // if(this.opened == false) {
       setTimeout(()=> {
         this.scrollToVer()
       },100)
-    }
+    // }
   }
 
   pointerEvents (){
@@ -155,7 +156,7 @@ export class BibleVerseComponent {
         rect.bottom < event.clientY
     ) {
         this.dialog.close();
-        this.opened = true;
+        this.open = false;
     }
   }
 }
