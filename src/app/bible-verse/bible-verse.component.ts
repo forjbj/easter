@@ -31,7 +31,7 @@ export class BibleVerseComponent {
              public meta: Meta,
              public elementRef:ElementRef,
              public time: TimeService) {
-              
+      
   }
 
   ngAfterViewInit(){
@@ -48,7 +48,7 @@ export class BibleVerseComponent {
       this.collapseLandscape(this.orientation);
     })
 
-      this.load(); //has to be here not in the constructor; doesn't load bible info and scroll in constructor
+    this.load(); //has to be here not in the constructor; doesn't load bible info and scroll in constructor
 
   }
   collapseLandscape(orientation: any) {
@@ -83,6 +83,7 @@ export class BibleVerseComponent {
   }
 
   bibleInfo() {
+    // console.log(this.elementRef?.nativeElement.querySelector(".head"))
     if (this.elementRef?.nativeElement.querySelector(".head")) { //necessary or error for null values below on inital load
       const name: any = this.elementRef?.nativeElement.querySelector(".head");
       const splits = name.id.toString().split('-');
@@ -104,11 +105,9 @@ export class BibleVerseComponent {
       } else if (this.time.scriptureCode == 2) {
         this.verse = 6
       }
-      // if (this.opened == false) {
-        setTimeout(() => { 
-          this.scrollToVer();
-        },300)
-      // }
+      setTimeout(() => { 
+        this.scrollToVer();
+      },300)
     }
   }
   scrollToVer(){
@@ -122,11 +121,9 @@ export class BibleVerseComponent {
 
   openDialog(){
     this.open = true;
-    // if(this.opened == false) {
-      setTimeout(()=> {
-        this.scrollToVer()
-      },100)
-    // }
+    setTimeout(()=> {
+      this.scrollToVer()
+    },100)
   }
 
   pointerEvents (){
