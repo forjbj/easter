@@ -1,6 +1,6 @@
 {
   "configVersion": 1,
-  "timestamp": 1730170119286,
+  "timestamp": 1730171202354,
   "index": "/easter/index.html",
   "assetGroups": [
     {
@@ -14,7 +14,7 @@
         "/easter/549.496ae61739f84e38.js",
         "/easter/favicon.ico",
         "/easter/index.html",
-        "/easter/main.7b709e1154fcafc5.js",
+        "/easter/main.525df17448dd21c6.js",
         "/easter/manifest.webmanifest",
         "/easter/polyfills.279f4d7999741415.js",
         "/easter/runtime.944271b7c38491d6.js",
@@ -80,8 +80,8 @@
     "/easter/assets/icons/Easter-Countdown96-px.png": "02e518049dd7ff0673ac3720562bca5605485686",
     "/easter/assets/refresh.png": "a056eaaffa099af1230a1ff8bb788471ee257800",
     "/easter/favicon.ico": "02e518049dd7ff0673ac3720562bca5605485686",
-    "/easter/index.html": "15f9e25d2ce61eb549e5da98d56cd38966da2fa8",
-    "/easter/main.7b709e1154fcafc5.js": "1642e1e509b79d283afa13b320bfde7050e2f9b4",
+    "/easter/index.html": "03495b32f47cad081011a2cc3431b851d290b5e7",
+    "/easter/main.525df17448dd21c6.js": "d4c2cded26ca6bf82976e0c82855344ce445c6b1",
     "/easter/manifest.webmanifest": "40b351f4544f8a3e3d22bc98dc1417706910fa28",
     "/easter/polyfills.279f4d7999741415.js": "9a7035bc446e1eb350c80efdc422678b17c17086",
     "/easter/runtime.944271b7c38491d6.js": "ad6dc53539a9de15e68dd5c6d7ee0817567d6621",
