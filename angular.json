@@ -17,7 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/easter",
+            "outputPath": "dist/easter/",
+            "baseHref": "/easter/",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -107,7 +108,10 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "buildTarget": "easter:build:production"
+            "buildTarget": "easter:build:production",
+            "repo": "https://github.com/forjbj/easter.git",
+            "branch": "gh-pages",
+            "dir": "dist/easter/"
           }
         }
       }
