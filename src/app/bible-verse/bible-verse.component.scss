@@ -43,7 +43,7 @@ dialog{
 }
 dialog[open]{
     display: block;
-    height: 50vh;
+    height: 60vh;
     max-width: 600px; //100px less than html; see style.scss
     opacity: 1;
     translate: 0 0;
@@ -51,6 +51,14 @@ dialog[open]{
     @starting-style{
         opacity: 0;
         translate: 0 25vh;
+    }
+    .leadHeader {
+        position: sticky;
+        height: 2rem;
+        width: 100%;
+        top: 0;
+        background: linear-gradient(180deg, rgba(black, 0.9), transparent);
+
     }
     .script {
         color: white;
