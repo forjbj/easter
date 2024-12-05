@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { TimeService } from '../time.service';
 
 @Component({
-  selector: 'app-easter-saturday',
-  templateUrl: './easter-saturday.component.html',
-  styleUrls: ['./easter-saturday.component.scss']
+    selector: 'app-easter-saturday',
+    templateUrl: './easter-saturday.component.html',
+    styleUrls: ['./easter-saturday.component.scss'],
+    standalone: false
 })
 export class EasterSaturdayComponent {
 

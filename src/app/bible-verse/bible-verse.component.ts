@@ -6,9 +6,10 @@ import { TimeService } from '../time.service';
 
 
 @Component({
-  selector: 'app-bible-verse',
-  templateUrl: './bible-verse.component.html',
-  styleUrls: ['./bible-verse.component.scss']
+    selector: 'app-bible-verse',
+    templateUrl: './bible-verse.component.html',
+    styleUrls: ['./bible-verse.component.scss'],
+    standalone: false
 })
 export class BibleVerseComponent {
   public result?: string = ""; //empty string necessary or 'undefined' shows up briefly on screen

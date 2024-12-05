@@ -2,9 +2,10 @@ import { Component } from '@angular/core';
 import { TimeService } from '../time.service';
 
 @Component({
-  selector: 'app-good-friday',
-  templateUrl: './good-friday.component.html',
-  styleUrls: ['./good-friday.component.scss']
+    selector: 'app-good-friday',
+    templateUrl: './good-friday.component.html',
+    styleUrls: ['./good-friday.component.scss'],
+    standalone: false
 })
 export class GoodFridayComponent {
 

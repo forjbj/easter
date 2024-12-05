@@ -3,9 +3,10 @@ import { delay } from 'rxjs';
 import { TimeService } from '../time.service';
 
 @Component({
-  selector: 'app-easter-countdown',
-  templateUrl: './easter-countdown.component.html',
-  styleUrls: ['./easter-countdown.component.scss']
+    selector: 'app-easter-countdown',
+    templateUrl: './easter-countdown.component.html',
+    styleUrls: ['./easter-countdown.component.scss'],
+    standalone: false
 })
 export class EasterCountdownComponent {
 
