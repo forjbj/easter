@@ -54,11 +54,10 @@ dialog[open]{
     }
     .leadHeader {
         position: sticky;
-        height: 1.5rem;
+        height: 1rem;
         width: 100%;
         top: 0;
-        background: linear-gradient(180deg, rgba(black, 0.9), transparent);
-
+        background: linear-gradient(180deg, rgba(black, 0.9), rgba(black, 0.3), transparent);
     }
     .script {
         color: white;
@@ -106,12 +105,12 @@ dialog[open]{
             transition-duration: 1s;
             &:hover{
                 background-color: #eee;
-                color: black;           
+                color: black;
             }
             &:active{
                 color: red;
                 transform: translateY(-0.3rem);
-            
+
             }
             @media (pointer: fine){
                 &:hover{
@@ -138,7 +137,7 @@ dialog[open]{
             &:active{
                 color: red;
                 transform: translateY(-0.3rem);
-            
+
             }
             @media (pointer: fine){
                 &:hover{
@@ -201,7 +200,7 @@ dialog[open]::backdrop{
     margin-bottom: 0.3rem;
     &:first-of-type:first-letter {
         float: left;
-        margin-bottom: 0; 
+        margin-bottom: 0;
         margin-right: 0.03rem;  // required for first letters that are in italics
         vertical-align: top;
         font-size: 2rem;
@@ -234,4 +233,3 @@ dialog[open]::backdrop{
     margin-left: 3rem;
     margin-right: 3rem;
 }
-
